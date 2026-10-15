@@ -62,7 +62,7 @@ export function BienvenidaPage() {
       >
         <div className="text-center">
           <p className={cn('text-sm font-medium text-brand-orange', entrada, 'delay-100')}>{saludo()}, {usuario.nombre}</p>
-          <h1 className={cn('mt-2 font-display text-4xl font-light tracking-tight md:text-5xl', entrada, 'delay-200')}>
+          <h1 className={cn('mt-2 font-heading text-4xl font-light tracking-tight md:text-5xl', entrada, 'delay-200')}>
             Bienvenido a Kastor
           </h1>
           <p className={cn('mx-auto mt-3 max-w-lg text-muted-foreground', entrada, 'delay-300')}>

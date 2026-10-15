@@ -13,12 +13,32 @@ Solo se inspeccionó la pantalla pública de login. No se navegó dentro del sis
 
 ## Tipografías
 
-| Uso en legacy | Familia | Token Tailwind |
+Decisión de la propuesta (2026-10-15): dos familias para todo el sistema. El legacy usaba además Source Sans Pro (UI) y Raleway (títulos del login); ambas se retiraron.
+
+| Uso | Familia | Token Tailwind |
 |---|---|---|
-| UI del sistema (navbar, títulos, botones `.btn-k`) | Source Sans Pro | `font-sans` (Source Sans 3 Variable) |
-| Títulos hero login (`.banner-log-titulo`, CTA) | Montserrat 600/700 | `font-heading` |
-| Párrafos login, botón Ingresar | Roboto 400/500 | `font-body` |
-| "Bienvenido" / "Iniciar sesión" (`.line-title`) | Raleway 300/400 | `font-display` |
+| Títulos (`h1`–`h6`, `CardTitle`, títulos de diálogos, banners) | Montserrat Variable | `font-heading` (aplicado por defecto a `h1`–`h6`) |
+| Textos (párrafos, tablas, formularios, botones) | Roboto Variable | `font-sans` (fuente base del `html`) |
+
+## Escala de tamaños
+
+Parte en 12px; no usar tamaños menores ni valores arbitrarios (`text-[11px]`).
+
+| Token | Tamaño / interlineado |
+|---|---|
+| `text-xs` | 12px / 16px |
+| `text-sm` | 14px / 20px |
+| `text-base` | 16px / 24px |
+| `text-lg` | 18px / 28px |
+| `text-xl` | 20px / 28px |
+| `text-2xl` | 24px / 32px |
+| `text-3xl` | 30px / 36px |
+| `text-4xl` | 36px / 40px |
+| `text-5xl` | 48px / 1 |
+
+## Radio
+
+Radio único `--radius: 6px`. Toda la escala (`rounded-sm` … `rounded-4xl`) apunta a ese token, así que cualquier clase da 6px. `rounded-full` se reserva para píldoras, avatares e indicadores.
 
 ## Paleta (hex exactos de main2.css)
 

@@ -1,4 +1,8 @@
-# Frontend Kastor
+# kastor-login-frontend
+
+Frontend del **login de K2** (Kastor). Incluye la pantalla de acceso y las vistas posteriores al ingreso: selector de productos, listado de comunidades y dashboard de la comunidad en Kastor Contable.
+
+Es solo frontend: no contiene backend, autenticación real ni conexión a APIs. Los datos son mock (`src/data/`).
 
 Stack: Vite + React 19 + TypeScript · Tailwind CSS v4 (tokens) · shadcn/ui (componentes) · lucide-react (iconos) · react-router-dom.
 
@@ -9,40 +13,47 @@ npm install
 npm run dev      # http://localhost:5173
 npm run build
 npm run lint
+npx tsc -b       # verificación de tipos
 ```
+
+## Rutas
+
+| Ruta | Vista |
+|---|---|
+| `/login` | Login de K2 |
+| `/bienvenida` | Selector de productos post-login |
+| `/` | Listado de comunidades |
+| `/usuarios`, `/perfiles`, `/tareas`, `/cobranza`, `/uf`, `/facturas/*` | Módulos de administración |
+| `/comunidades/:id` | Dashboard de la comunidad (sidebar de 2 niveles: productos + Kastor Contable) |
+| `/comunidades/:id/:categoria/:modulo` | Módulos de Kastor Contable |
 
 ## Estructura
 
 ```
 src/
-├── index.css                  # Tokens de diseño (CSS variables) cargados por Tailwind v4
-├── main.tsx                   # Router + TooltipProvider
-├── App.tsx                    # Rutas: /login y / (dentro de AppLayout)
-├── layouts/
-│   └── app-layout.tsx         # Sidebar + Core (SidebarProvider + SidebarInset + Outlet)
+├── index.css            # Tokens de diseño (paleta, tipografías, escala de tamaños, radio) y animaciones
+├── App.tsx              # Rutas
+├── config/
+│   ├── navigation.ts    # Menús: administración y Kastor Contable (único lugar)
+│   └── productos.ts     # Productos de la suite (nivel 1 del sidebar)
+├── layouts/             # app-layout (sidebar simple) y comunidad-layout (sidebar de 2 niveles)
 ├── components/
-│   ├── ui/                    # Componentes shadcn (generados por CLI)
-│   ├── brand/logo.tsx         # Wordmark Kastor (naranja + barra bicolor)
-│   ├── layout/
-│   │   ├── app-sidebar.tsx    # Sidebar: logo, módulos en 4 categorías, soporte, usuario
-│   │   └── core.tsx           # Core, CoreHeader (título, ambiente, acciones, usuario) y CoreBody
-│   └── communities/
-│       ├── community-card.tsx # Card de comunidad (formato Rut / prorrateo / cierre / etc.)
-│       ├── community-table.tsx# Vista lista de comunidades
-│       └── metric-card.tsx    # Tarjeta de métrica
-├── pages/
-│   ├── login.tsx
-│   └── index.tsx              # Métricas + grilla de 12 comunidades (4 por fila en xl)
-├── data/
-│   └── communities.ts         # Datos mock
+│   ├── ui/              # shadcn (generados por CLI, no editar a mano)
+│   ├── layout/          # Sidebars y Core (CoreHeader + CoreBody)
+│   └── <dominio>/       # Componentes por dominio (communities, comunidad, facturas, uf...)
+├── pages/               # Una página por ruta
+├── data/                # Datos mock
 ├── hooks/
-└── lib/utils.ts               # cn()
+└── lib/
+docs/
+├── referencias/         # Evidencia del sistema legacy (capturas y HTML)
+└── mapas/               # MAPA-<slug>.md por módulo + inventario MODULOS.md
 ```
 
 ## Convenciones
 
-- **Tokens**: se definen en `src/index.css` (`:root` y `.dark`) y se exponen a Tailwind vía `@theme inline`. Tokens de marca: `--brand-orange`, `--brand-purple`, `--success` (clases `bg-brand-orange`, `text-brand-purple`, etc.). `--primary` apunta al naranja Kastor.
-- **Marca**: paleta, tipografías y assets mapeados desde el login real están documentados en `DESIGN-SYSTEM.md`.
-- **Componentes**: agregar con `npx shadcn@latest add <componente>`. Config en `components.json` (estilo `radix-nova`, iconos `lucide`).
+- **Tokens**: en `src/index.css` (`:root` y `.dark`), expuestos a Tailwind con `@theme inline`. Nunca hex sueltos en componentes.
+- **Marca**: paleta, tipografías (Montserrat títulos, Roboto textos), escala desde 12px y radio de 6px en `DESIGN-SYSTEM.md`.
+- **Componentes**: agregar con `npx shadcn@latest add <componente>` (estilo `radix-nova`).
 - **Iconos**: siempre `lucide-react`.
-- **Vistas**: cada página arma su propio `<Core>` con `<CoreHeader title actions>` y `<CoreBody>`.
+- **Vistas**: cada página arma su `<Core>` con `<CoreHeader>` y `<CoreBody>`.

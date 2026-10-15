@@ -1,10 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/source-sans-3";
 @import "@fontsource-variable/roboto";
 @import "@fontsource-variable/montserrat";
-@import "@fontsource-variable/raleway";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -21,10 +19,29 @@
     --color-brand-purple: var(--brand-purple);
     --color-brand-purple-foreground: var(--brand-purple-foreground);
     --color-success: var(--success);
-    --font-sans: 'Source Sans 3 Variable', 'Source Sans Pro', sans-serif;
-    --font-heading: 'Montserrat Variable', 'Montserrat', sans-serif;
-    --font-body: 'Roboto Variable', 'Roboto', sans-serif;
-    --font-display: 'Raleway Variable', 'Raleway', sans-serif;
+    /* Tipografía: Montserrat para títulos, Roboto para textos. */
+    --font-sans: 'Roboto Variable', 'Roboto', system-ui, sans-serif;
+    --font-heading: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
+
+    /* Escala de tamaños desde 12px (no usar tamaños menores). */
+    --text-xs: 12px;
+    --text-xs--line-height: 16px;
+    --text-sm: 14px;
+    --text-sm--line-height: 20px;
+    --text-base: 16px;
+    --text-base--line-height: 24px;
+    --text-lg: 18px;
+    --text-lg--line-height: 28px;
+    --text-xl: 20px;
+    --text-xl--line-height: 28px;
+    --text-2xl: 24px;
+    --text-2xl--line-height: 32px;
+    --text-3xl: 30px;
+    --text-3xl--line-height: 36px;
+    --text-4xl: 36px;
+    --text-4xl--line-height: 40px;
+    --text-5xl: 48px;
+    --text-5xl--line-height: 1;
     --color-brand-orange-hover: var(--brand-orange-hover);
     --color-brand-orange-legacy: var(--brand-orange-legacy);
     --color-brand-orange-disabled: var(--brand-orange-disabled);
@@ -74,13 +91,15 @@
     --color-card: var(--card);
     --color-foreground: var(--foreground);
     --color-background: var(--background);
-    --radius-sm: calc(var(--radius) * 0.6);
-    --radius-md: calc(var(--radius) * 0.8);
+    /* Radio único de 6px: toda la escala apunta al mismo token (rounded-full queda para píldoras/avatares). */
+    --radius-xs: var(--radius);
+    --radius-sm: var(--radius);
+    --radius-md: var(--radius);
     --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.4);
-    --radius-2xl: calc(var(--radius) * 1.8);
-    --radius-3xl: calc(var(--radius) * 2.2);
-    --radius-4xl: calc(var(--radius) * 2.6);
+    --radius-xl: var(--radius);
+    --radius-2xl: var(--radius);
+    --radius-3xl: var(--radius);
+    --radius-4xl: var(--radius);
 }
 
 :root {
@@ -136,7 +155,7 @@
     --viz-4: #EDA100;
     --viz-5: #E87BA4;
     --viz-6: #6640DF;
-    --radius: 0.5rem;
+    --radius: 6px;
     --sidebar: #FDFDFE;
     --sidebar-foreground: var(--brand-darkblue);
     --sidebar-primary: var(--brand-orange);
@@ -215,6 +234,9 @@
     }
   html {
     @apply font-sans;
+    }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
     }
 }
 /* ------------------------------------------------------------------

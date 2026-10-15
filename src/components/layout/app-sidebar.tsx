@@ -75,7 +75,7 @@ export function AppSidebar() {
                       {item.badge ? (
                         <SidebarMenuBadge>{item.badge}</SidebarMenuBadge>
                       ) : inferred ? (
-                        <SidebarMenuBadge className="text-[10px] text-muted-foreground">?</SidebarMenuBadge>
+                        <SidebarMenuBadge className="text-xs text-muted-foreground">?</SidebarMenuBadge>
                       ) : null}
                     </SidebarMenuItem>
                   )

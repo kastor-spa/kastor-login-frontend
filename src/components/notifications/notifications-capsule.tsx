@@ -53,7 +53,7 @@ function NotificacionItem({ n, onOpen }: { n: Notificacion; onOpen: (n: Notifica
             {!n.leida ? <span className="size-2 shrink-0 rounded-full bg-brand-orange" aria-label="No leída" /> : null}
           </span>
           <span className="mt-0.5 line-clamp-2 block text-xs text-muted-foreground">{n.descripcion}</span>
-          <span className="mt-1 block text-[11px] text-muted-foreground/80">{tiempoRelativo(n.fecha)}</span>
+          <span className="mt-1 block text-xs text-muted-foreground/80">{tiempoRelativo(n.fecha)}</span>
         </span>
       </button>
       <Button
@@ -101,7 +101,7 @@ export function NotificationsCapsule() {
         >
           <Bell className={cn(noLeidas > 0 && 'animate-[wiggle_1s_ease-in-out_1]')} />
           {noLeidas > 0 ? (
-            <span className="min-w-4 rounded-full bg-brand-orange px-1 text-[11px] font-semibold leading-4 text-white tabular-nums">
+            <span className="min-w-4 rounded-full bg-brand-orange px-1 text-xs font-semibold leading-4 text-white tabular-nums">
               {noLeidas > 9 ? '9+' : noLeidas}
             </span>
           ) : null}

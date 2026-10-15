@@ -125,7 +125,7 @@ export function GraficoIncidencia({ datos, periodo, comunidad }: GraficoIncidenc
           {/* Centro: total o la categoría resaltada */}
           <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center text-center">
             <span key={filaActiva?.slug ?? 'total'} className="flex flex-col items-center animate-in fade-in zoom-in-95 duration-200">
-              <span className="max-w-32 truncate text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+              <span className="max-w-32 truncate text-xs font-medium uppercase tracking-wide text-muted-foreground">
                 {filaActiva ? filaActiva.nombre : 'Total'}
               </span>
               <span className="text-lg font-semibold tabular-nums text-foreground">

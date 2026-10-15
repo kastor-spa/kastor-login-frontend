@@ -247,7 +247,7 @@ function SelectorComunidad({ comunidad }: { comunidad: Community }) {
           className="flex w-full items-center gap-2 rounded-md p-1 text-left outline-none transition-colors hover:bg-sidebar-accent focus-visible:ring-2 focus-visible:ring-sidebar-ring data-[state=open]:bg-sidebar-accent"
         >
           <div className="grid min-w-0 flex-1 leading-tight">
-            <span className="text-[11px] font-semibold uppercase tracking-wide text-brand-orange">Kastor Contable</span>
+            <span className="text-xs font-semibold uppercase tracking-wide text-brand-orange">Kastor Contable</span>
             {/* Mismo view-transition-name que el encabezado de la card: la card "se transforma" en este título. */}
             <span
               className="truncate text-sm font-semibold text-brand-darkblue"
@@ -339,7 +339,7 @@ function ItemCategoria({ categoria, comunidadId, pathname, activa, abierta, onOp
             {categoria.modulos.map(subItem)}
             {informes.length > 0 ? (
               <>
-                <li className="px-2 pt-2 pb-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                <li className="px-2 pt-2 pb-0.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                   Informes
                 </li>
                 {informes.map(subItem)}

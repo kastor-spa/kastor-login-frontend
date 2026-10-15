@@ -33,10 +33,10 @@ export function LoginPage() {
         <div className="w-full max-w-[480px]">
           <KastorLogo width={140} />
 
-          <h1 className="mt-[26px] font-display text-[40px] font-light leading-none text-foreground">
+          <h1 className="mt-[26px] font-heading text-[40px] font-light leading-none text-foreground">
             Bienvenido
           </h1>
-          <h2 className="mt-[11px] font-display text-base font-normal text-brand-gray">
+          <h2 className="mt-[11px] font-heading text-base font-normal text-brand-gray">
             {recover ? 'Recuperar contraseña' : 'Iniciar sesión'}
           </h2>
 
@@ -74,7 +74,7 @@ export function LoginPage() {
 
             <Button
               type="submit"
-              className="h-[34px] w-full rounded-[4px] bg-brand-orange font-body text-sm font-normal hover:bg-brand-orange-hover"
+              className="h-[34px] w-full rounded-[4px] bg-brand-orange font-sans text-sm font-normal hover:bg-brand-orange-hover"
               disabled={loading}
             >
               {loading ? <LoaderCircle className="animate-spin" /> : null}
@@ -104,7 +104,7 @@ export function LoginPage() {
           <h3 className="ml-auto mt-2.5 max-w-[420px] font-heading text-[clamp(16px,1.7vw,27px)] font-semibold leading-[1.3] text-brand-orange">
             Conecta tu cuenta bancaria y concilia en automático
           </h3>
-          <p className="ml-auto mt-6 max-w-[420px] font-body text-[clamp(13px,1.3vw,20px)] leading-[1.45] text-brand-gray">
+          <p className="ml-auto mt-6 max-w-[420px] font-sans text-[clamp(13px,1.3vw,20px)] leading-[1.45] text-brand-gray">
             Sin descargar cartolas, sin digitar datos, sin errores. Los movimientos de tu banco
             aparecen solos y el sistema sugiere el match por ti.
           </p>
