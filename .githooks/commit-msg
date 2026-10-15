@@ -1,0 +1,9 @@
+#!/bin/sh
+# Regla del negocio: los commits no llevan co-autoría ni firma de Claude.
+# Elimina las líneas "Co-Authored-By: Claude ..." y "Generated with Claude Code".
+msg_file="$1"
+tmp="$(mktemp)"
+grep -v -i -E '^[[:space:]]*co-authored-by:.*(claude|anthropic)|^[^[:alnum:]]*generated with \[?claude code' "$msg_file" > "$tmp" || true
+# Quita líneas en blanco sobrantes al final del mensaje.
+awk 'NF { for (i = 0; i < blank; i++) print ""; blank = 0; print; next } { blank++ }' "$tmp" > "$msg_file"
+rm -f "$tmp"

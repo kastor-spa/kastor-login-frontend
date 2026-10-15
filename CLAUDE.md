@@ -28,5 +28,9 @@ Propuesta de frontend nuevo para Kastor (administración de comunidades, Chile).
 - `npm run dev` (http://localhost:5173), `npm run build`, `npm run lint`, `npx tsc -b`.
 - Verificar siempre con `npx tsc -b` antes de reportar.
 
+## Commits
+- Regla del negocio: los commits y PRs no llevan co-autoría ni firma de Claude (sin `Co-Authored-By: Claude`, sin "Generated with Claude Code").
+- Lo aplican `.claude/settings.json` (`attribution` vacío) y el hook `.githooks/commit-msg` (se activa con `npm install` vía `prepare`).
+
 ## Idioma
 Español en UI, docs, commits y respuestas.
