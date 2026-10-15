@@ -1,0 +1,822 @@
+<!-- origen: https://upselling.kastor.cl/login/perfiles/modificar/2326 | Administración - upselling -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>
+				Administración - upselling			</title>
+	<link rel="shortcut icon" href="https://repositorio.kastor.cl/edificio_hotfix/img/icono.ico">
+	<script type="text/javascript" src="/login/js/jquery-1.11.1.min.js"></script><script type="text/javascript" src="/login/js/bootstrap.js"></script><script type="text/javascript" src="/login/js/dataTables.min.js"></script><script type="text/javascript" src="/login/js/jquery-ui.js"></script><script type="text/javascript" src="/login/js/dataTables.bootstrap.js"></script><link rel="stylesheet" type="text/css" href="/login/css/bootstrap.css"/><link rel="stylesheet" type="text/css" href="/login/css/bootstrap-theme.css"/><link rel="stylesheet" type="text/css" href="/login/css/dataTables.min.css"/><link rel="stylesheet" type="text/css" href="/login/css/jquery-ui.css"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script>
+	$(function(){
+
+		$(".datepicker").datepicker({dateFormat:'dd-mm-yy'});
+		$(".tabla-herramientas > a").addClass('mostrar-tooltip');
+		$(document).find(".mostrar-tooltip").tooltip({
+				position: {
+					my: "center bottom-15",
+					at: "center top",
+					using: function( position, feedback ) {
+						$( this ).css( position );
+						$( "<div>" )
+						.addClass( "arrow bottom" )
+						.addClass( feedback.vertical )
+						.addClass( feedback.horizontal )
+						.appendTo( this );
+					}
+				}
+			});
+		$(document).find(".mostrar-tooltip2").tooltip({
+				position: {
+					my: "center bottom-15",
+					at: "center arrow top",
+					using: function( position, feedback ) {
+						$( this ).css( position );
+						$( "<div>" )
+						.addClass( "arrow bottom" )
+						.addClass( feedback.vertical )
+						.addClass( feedback.horizontal )
+						.appendTo( this );
+					}
+				}
+			});
+		});
+</script>
+<style>
+
+	.container-general{
+		margin-bottom: 100px;
+		box-shadow: 0 0 5px #888;
+		background: white;
+		height: 100%;
+		width:1200px;
+		-moz-box-shadow: 0 0 5px #888;
+		-webkit-box-shadow: 0 0 5px #888;
+	}
+
+	/* CUSTOM CSS */
+
+	.colorNegro{
+		color:black !important;
+		text-shadow: none !important;
+	}
+
+	.colorBlanco{
+		color:white !important;
+		text-shadow: none !important;
+	}
+
+
+	#bg {
+		min-height: 100%;
+		min-width: 1024px;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+
+
+	body {
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-attachment:fixed;
+		transition: background 0.5s linear;
+		-moz-transition: background 0.5s linear; /* Firefox 4 */
+		-webkit-transition: background 0.5s linear; /* Safari and Chrome */
+		-o-transition: background 0.5s linear; /* Opera */
+		-ms-transition: background 0.5s linear; /* Explorer 10 */
+		font-family: 'Calibri', 'Open Sans', sans-serif !important;
+
+
+
+	}
+	
+	html {
+		height: 100%
+	}
+
+</style>
+
+</head>
+<body class="">
+
+
+<!--<div id="contenedor_imagen_aviso" style='margin: 0 auto !important; text-align: center;width:100%; ' >
+	<img src='http://assets.kastor.cl/informativas/20220113_AVISO3.png' width='25%' style="position: absolute;margin-left: 16%;margin-top: 0%;">
+</div>-->
+	<div class="container container-general" style="">
+						<div class="row" >
+				<div class="col-md-12">
+				<style>
+@media screen and (min-width:768px){
+    .navbar-brand-centered {
+        position: absolute;
+        left: 35.5%;
+        display: block;
+        width: 320px;
+        text-align: center;
+        background-color: #eee;
+    }
+    .navbar>.container .navbar-brand-centered, 
+    .navbar>.container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+    }
+}
+</style>
+<script>
+$(function(){
+	
+});
+</script>
+
+<br>      <nav class="navbar navbar-default" role="navigation">
+    	  <div class="col-md-12">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <div class="navbar-brand" style="margin-top:-6px"><a href="/login/"><img src="https://assets.kastor.cl/images/logo-kastor.png" style="width:100px;"></a></div>
+		       <div class="navbar-brand navbar-brand-centered">upselling</div>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="navbar-brand">
+					
+		      <ul class="nav navbar-nav navbar-right">
+			   	<!--<li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 18px;"><b>Herramientas</b> <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			          	<li><a href="/login/tareas">Tareas</a></li>
+			   						            <li><a href="/login/usuarios">Usuarios</a></li>
+			            <li><a href="/login/perfiles">Perfiles</a></li>
+			            				            		<li><a href="/login/dashboard/sca">Sistema Cobranza</a></li>
+			        					        				          </ul>
+			    </li>-->
+			    <li>
+			    	<a href="javascript:void(0)"><b>hector.barrera@kastor.cl</b> <i class="glyphicon glyphicon-cog"></i></a>
+			    </li>
+		        <li><a href="/login/dashboard/salir"><i class="glyphicon glyphicon-log-out"></i></a></li>		        
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+				<div class="row" style="margin-top:10px;margin-bottom: -7px;">
+			<div class="col-md-12">
+				<div style="width:420px;float:left;">
+			   						            <a class="btn btn-warning btn-sm" href="/login/usuarios">Usuarios</a>
+			           					            	<a class="btn btn-default btn-sm" href="/login/dashboard/sca">Sistema Cobranza </a>
+			        					            	<a class="btn btn-default btn-sm" href="/login/perfiles">Perfiles</a>
+
+			        							<a class="btn btn-default btn-sm" href="/login/tareas">Tareas</a>
+						<a class="btn btn-default btn-sm" href="/login/dashboard/configuracion_uf">UF</a>
+				</div>
+						
+			   						            	<div style="float:left"><a class="btn btn-default btn-sm" href="/login/dashboard/facturas">Facturas Kastor pendientes</a></div>
+			        	
+															<div style="float:left;margin-left:10px;"><a class="btn btn-default btn-sm" href="/login/dashboard/facturas_caleu3">Facturas Caleu pendientes</a></div>
+									    <div>
+					<div style="float:right;margin-top:6px;">
+						<label style="font-size: 14px;border-top-right-radius: 0px;border-bottom-right-radius: 0px" class="label label-default "></span>SOPORTE</label>
+						<label style="background-color: #b2babb  !important;font-size: 14px;margin-left:-5px;border-top-left-radius: 0px;border-bottom-left-radius: 0px" class="label">
+							<span class="glyphicon glyphicon-phone"></span> 02-2 833 8269 / 02-2 833 8307
+						</label>
+					</div>
+					
+					<div style="float:right;margin-top:6px;">
+											</div>
+				</div>
+			</div>
+			
+		</div>
+		<br>
+								<script>
+$(function(){
+	$('.checksub').click(function(){
+		if($(this).is(':checked'))
+		{
+			$(this).parent().parent().addClass('activeLine');
+		}
+		else
+		{
+			$(this).parent().parent().removeClass('activeLine');
+		}
+	});
+	$(".todas").click(function(){
+		$this = $(this);
+		if($this.html() == "Seleccionar todas")
+		{
+			$this.html("Deseleccionar todas");
+			$(".todas_sub").each(function(){
+				if($(this).html() == "Seleccionar todas")
+				{
+					$(this).trigger('click');
+				}
+			});
+		}
+		else
+		{
+			$this.html("Seleccionar todas");
+			$(".todas_sub").each(function(){
+				if($(this).html() == "Deseleccionar todas")
+				{
+					$(this).trigger('click');
+				}
+			});
+		}
+	});
+
+	$(".todas_sub").click(function(){
+		$this = $(this);
+		$id = $this.attr('data-id');
+		if($this.html() == "Seleccionar todas")
+		{
+			$(".check"+$id).each(function(){
+				if(!$(this).is(':checked'))
+				{
+					$(this).prop("checked",true);
+					$(this).parent().parent().addClass('activeLine');
+				}	
+
+			});
+			$this.html("Deseleccionar todas");
+		}
+		else
+		{
+			$(".check"+$id).each(function(){
+				if($(this).is(':checked'))
+				{
+					$(this).prop("checked",false);
+					$(this).parent().parent().removeClass('activeLine');
+				}
+			});
+			$this.html("Seleccionar todas");
+		}
+	});
+	$("form").submit(function(){
+		var cantidadCheck = $('.checksub:checked').length;
+		if(cantidadCheck < 1)
+		{
+			alert("¡Debes seleccionar al menos un submodulo!");
+			return false;
+		}
+	});
+});
+</script>
+<style>
+tr.activeLine
+{
+	background: orange;
+	color:white;
+	font-weight: bold;
+}
+.row-especial {
+ -moz-column-width: 25em;
+ -webkit-column-width: 25em;
+ -moz-column-gap: .5em;
+ -webkit-column-gap: .5em; 
+  
+}
+
+.row-especial > .panel {
+ display: inline-block;
+ margin:  .5em;
+ padding:  0; 
+ width:98%;
+}
+
+</style>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			<strong>Administrador de Perfiles</strong>
+				<div class="panel-actions">
+		            <a href="/login/perfiles" class="btn btn-default btn-sm">
+		                <span class="glyphicon glyphicon-arrow-left"></span> Volver
+					</a>
+	            </div>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal" method="post" autocomplete="off">
+				<input type="hidden" name="id_perfil" value="2326">
+				<fieldset>
+
+				<!-- Form Name -->
+				<legend>Modificar perfil <b>DANILO</b></legend>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Nombre perfil</label>  
+				  <div class="col-md-4">
+				  <input id="" name="nombre" required  value="DANILO" class="form-control input-md" type="text">
+				    
+				  </div>
+				</div>
+								<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<strong>Permisos</strong>
+							<div class="panel-actions">
+		            			<button type="button" class="todas btn btn-default btn-sm">Seleccionar todas</button>
+	            			</div>
+						</div>
+						<div class="panel-body">
+							<div class="row-especial">
+															<div class="panel panel-default">
+									<div class="panel-heading">
+										<strong>DEV Crear Unidades</strong>
+										<div class="panel-actions">
+					            			<button type="button" data-id="1" class="todas_sub btn btn-default btn-sm">Seleccionar todas</button>
+				            			</div>
+									</div>
+									<div class="panel-body">
+										<table class="table">
+																					<tr class="activeLine">
+												<td>Elementos</td>
+												<td><input type="checkbox" checked class="checksub check1" name="submodulos[]" value="1"></td>
+											</tr>
+																						<tr class="">
+												<td>Unidades</td>
+												<td><input type="checkbox"  class="checksub check1" name="submodulos[]" value="3"></td>
+											</tr>
+																						<tr class="">
+												<td>Listado de Unidades</td>
+												<td><input type="checkbox"  class="checksub check1" name="submodulos[]" value="109"></td>
+											</tr>
+																						<tr class="">
+												<td>Carga de comunidad</td>
+												<td><input type="checkbox"  class="checksub check1" name="submodulos[]" value="107"></td>
+											</tr>
+																						<tr class="">
+												<td>Sectores</td>
+												<td><input type="checkbox"  class="checksub check1" name="submodulos[]" value="217"></td>
+											</tr>
+																					</table>
+									</div>
+								</div>
+															<div class="panel panel-default">
+									<div class="panel-heading">
+										<strong>DEV Configuracion</strong>
+										<div class="panel-actions">
+					            			<button type="button" data-id="2" class="todas_sub btn btn-default btn-sm">Seleccionar todas</button>
+				            			</div>
+									</div>
+									<div class="panel-body">
+										<table class="table">
+																					<tr class="">
+												<td>Datos Comunidad</td>
+												<td><input type="checkbox"  class="checksub check2" name="submodulos[]" value="4"></td>
+											</tr>
+																						<tr class="">
+												<td>Sistema de Cobranza</td>
+												<td><input type="checkbox"  class="checksub check2" name="submodulos[]" value="69"></td>
+											</tr>
+																						<tr class="">
+												<td>Proveedores</td>
+												<td><input type="checkbox"  class="checksub check2" name="submodulos[]" value="7"></td>
+											</tr>
+																						<tr class="">
+												<td>Categorias</td>
+												<td><input type="checkbox"  class="checksub check2" name="submodulos[]" value="8"></td>
+											</tr>
+																						<tr class="">
+												<td>Subcategorias</td>
+												<td><input type="checkbox"  class="checksub check2" name="submodulos[]" value="9"></td>
+											</tr>
+																						<tr class="">
+												<td>Categorias de Recargo</td>
+												<td><input type="checkbox"  class="checksub check2" name="submodulos[]" value="10"></td>
+											</tr>
+																					</table>
+									</div>
+								</div>
+															<div class="panel panel-default">
+									<div class="panel-heading">
+										<strong>DEV Gastos Comunidad</strong>
+										<div class="panel-actions">
+					            			<button type="button" data-id="3" class="todas_sub btn btn-default btn-sm">Seleccionar todas</button>
+				            			</div>
+									</div>
+									<div class="panel-body">
+										<table class="table">
+																					<tr class="">
+												<td>Ordenes de Compra</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="1010"></td>
+											</tr>
+																						<tr class="">
+												<td>Seguros CCS</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="220"></td>
+											</tr>
+																						<tr class="">
+												<td>Ver Gastos</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="12"></td>
+											</tr>
+																						<tr class="">
+												<td>Ingresar Gastos</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="13"></td>
+											</tr>
+																						<tr class="">
+												<td>Asignar Gastos</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="14"></td>
+											</tr>
+																						<tr class="">
+												<td>Codigos de Cuenta</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="87"></td>
+											</tr>
+																						<tr class="">
+												<td>Pagar Gastos</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="15"></td>
+											</tr>
+																						<tr class="">
+												<td>Medidores</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="17"></td>
+											</tr>
+																						<tr class="">
+												<td>Libro de compras SII</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="231"></td>
+											</tr>
+																						<tr class="">
+												<td><b>INFORMES</b></td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="11"></td>
+											</tr>
+																						<tr class="">
+												<td>Egresos 2</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="84"></td>
+											</tr>
+																						<tr class="">
+												<td>Cartola Proveedores</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="1011"></td>
+											</tr>
+																						<tr class="">
+												<td>Egresos</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="16"></td>
+											</tr>
+																						<tr class="">
+												<td>Detalle Gastos</td>
+												<td><input type="checkbox"  class="checksub check3" name="submodulos[]" value="54"></td>
+											</tr>
+																					</table>
+									</div>
+								</div>
+															<div class="panel panel-default">
+									<div class="panel-heading">
+										<strong>DEV Pagos G. C.</strong>
+										<div class="panel-actions">
+					            			<button type="button" data-id="4" class="todas_sub btn btn-default btn-sm">Seleccionar todas</button>
+				            			</div>
+									</div>
+									<div class="panel-body">
+										<table class="table">
+																					<tr class="">
+												<td>Pagos Unidad</td>
+												<td><input type="checkbox"  class="checksub check4" name="submodulos[]" value="18"></td>
+											</tr>
+																						<tr class="">
+												<td>Recargos Unidad</td>
+												<td><input type="checkbox"  class="checksub check4" name="submodulos[]" value="19"></td>
+											</tr>
+																						<tr class="">
+												<td>Reversa de Pagos</td>
+												<td><input type="checkbox"  class="checksub check4" name="submodulos[]" value="20"></td>
+											</tr>
+																						<tr class="">
+												<td><b>INFORMES</b></td>
+												<td><input type="checkbox"  class="checksub check4" name="submodulos[]" value="59"></td>
+											</tr>
+																						<tr class="">
+												<td>Ingresos</td>
+												<td><input type="checkbox"  class="checksub check4" name="submodulos[]" value="49"></td>
+											</tr>
+																						<tr class="">
+												<td>Informe de Pagos</td>
+												<td><input type="checkbox"  class="checksub check4" name="submodulos[]" value="68"></td>
+											</tr>
+																					</table>
+									</div>
+								</div>
+															<div class="panel panel-default">
+									<div class="panel-heading">
+										<strong>DEV  Remuneraciones</strong>
+										<div class="panel-actions">
+					            			<button type="button" data-id="5" class="todas_sub btn btn-default btn-sm">Seleccionar todas</button>
+				            			</div>
+									</div>
+									<div class="panel-body">
+										<table class="table">
+																					<tr class="">
+												<td>Trabajadores</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="21"></td>
+											</tr>
+																						<tr class="">
+												<td>Remuneraciones</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="22"></td>
+											</tr>
+																						<tr class="">
+												<td>Asignacion Familiar</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="26"></td>
+											</tr>
+																						<tr class="">
+												<td><b>INFORMES</b></td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="60"></td>
+											</tr>
+																						<tr class="">
+												<td>Libro de Remuneraciones</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="44"></td>
+											</tr>
+																						<tr class="">
+												<td>Recibo de Liquidaciones</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="45"></td>
+											</tr>
+																						<tr class="">
+												<td>Detalle Leyes Sociales</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="90"></td>
+											</tr>
+																						<tr class="">
+												<td>Reporte de liquidaciones </td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="202"></td>
+											</tr>
+																						<tr class="">
+												<td>Detalle de Remuneraciones</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="56"></td>
+											</tr>
+																						<tr class="">
+												<td>Archivos Previred</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="47"></td>
+											</tr>
+																						<tr class="">
+												<td>Nomina de pago trabajadores</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="201"></td>
+											</tr>
+																						<tr class="">
+												<td>Archivos LRE</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="203"></td>
+											</tr>
+																						<tr class="">
+												<td>Recibo de Anticipos</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="46"></td>
+											</tr>
+																						<tr class="">
+												<td>Consolidacion de Sueldos</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="111"></td>
+											</tr>
+																						<tr class="">
+												<td>Declaracion Jurada de Rentas</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="108"></td>
+											</tr>
+																						<tr class="">
+												<td>Abrir Remuneraciones</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="73"></td>
+											</tr>
+																						<tr class="">
+												<td>Impresion Hojas Foliadas</td>
+												<td><input type="checkbox"  class="checksub check5" name="submodulos[]" value="81"></td>
+											</tr>
+																					</table>
+									</div>
+								</div>
+															<div class="panel panel-default">
+									<div class="panel-heading">
+										<strong>DEV  Banco</strong>
+										<div class="panel-actions">
+					            			<button type="button" data-id="6" class="todas_sub btn btn-default btn-sm">Seleccionar todas</button>
+				            			</div>
+									</div>
+									<div class="panel-body">
+										<table class="table">
+																					<tr class="">
+												<td>Provision Transbank</td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="79"></td>
+											</tr>
+																						<tr class="">
+												<td>Cuentas Bancarias</td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="30"></td>
+											</tr>
+																						<tr class="">
+												<td>Chequeras</td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="31"></td>
+											</tr>
+																						<tr class="">
+												<td>Ingreso a Cuenta</td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="29"></td>
+											</tr>
+																						<tr class="">
+												<td>Conciliacion Bancaria </td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="76"></td>
+											</tr>
+																						<tr class="">
+												<td>Fondos</td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="50"></td>
+											</tr>
+																						<tr class="">
+												<td>Rendimiento de fondos</td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="222"></td>
+											</tr>
+																						<tr class="">
+												<td><b>INFORMES</b></td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="61"></td>
+											</tr>
+																						<tr class="">
+												<td>Flujo de caja</td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="230"></td>
+											</tr>
+																						<tr class="">
+												<td>Libro Banco</td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="85"></td>
+											</tr>
+																						<tr class="">
+												<td>Estado de Resultado</td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="221"></td>
+											</tr>
+																						<tr class="">
+												<td>Estado Financiero</td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="78"></td>
+											</tr>
+																						<tr class="">
+												<td>Cartera de Cheques</td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="51"></td>
+											</tr>
+																						<tr class="">
+												<td>Cartola Caja Chica</td>
+												<td><input type="checkbox"  class="checksub check6" name="submodulos[]" value="28"></td>
+											</tr>
+																					</table>
+									</div>
+								</div>
+															<div class="panel panel-default">
+									<div class="panel-heading">
+										<strong>DEV Cobranza G.C.</strong>
+										<div class="panel-actions">
+					            			<button type="button" data-id="7" class="todas_sub btn btn-default btn-sm">Seleccionar todas</button>
+				            			</div>
+									</div>
+									<div class="panel-body">
+										<table class="table">
+																					<tr class="">
+												<td>Liberar Gasto Comun</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="80"></td>
+											</tr>
+																						<tr class="">
+												<td>No Prorrateables</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="89"></td>
+											</tr>
+																						<tr class="">
+												<td>Minutas</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="33"></td>
+											</tr>
+																						<tr class="">
+												<td>Cartola por Unidad</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="35"></td>
+											</tr>
+																						<tr class="">
+												<td><b>INFORMES</b></td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="62"></td>
+											</tr>
+																						<tr class="">
+												<td>Asistencia Asamblea</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="91"></td>
+											</tr>
+																						<tr class="">
+												<td>Cobranza de Gastos Comunes</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="34"></td>
+											</tr>
+																						<tr class="">
+												<td>Aviso de cobro (Boletas)</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="37"></td>
+											</tr>
+																						<tr class="">
+												<td>Aviso suspension de servicios</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="38"></td>
+											</tr>
+																						<tr class="">
+												<td>Elementos por Unidad</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="42"></td>
+											</tr>
+																						<tr class="">
+												<td>Planilla General de Cobranza</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="43"></td>
+											</tr>
+																						<tr class="">
+												<td>Prorrateo por elementos</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="104"></td>
+											</tr>
+																						<tr class="">
+												<td>Detalle Interes multa</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="110"></td>
+											</tr>
+																						<tr class="">
+												<td>Reporte de Morosos</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="55"></td>
+											</tr>
+																						<tr class="">
+												<td>Mailing</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="88"></td>
+											</tr>
+																						<tr class="">
+												<td>Movimientos Unidad</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="67"></td>
+											</tr>
+																						<tr class="">
+												<td>Log Usuarios</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="75"></td>
+											</tr>
+																						<tr class="">
+												<td>Desprorratear</td>
+												<td><input type="checkbox"  class="checksub check7" name="submodulos[]" value="74"></td>
+											</tr>
+																					</table>
+									</div>
+								</div>
+															<div class="panel panel-default">
+									<div class="panel-heading">
+										<strong>DEV Historico</strong>
+										<div class="panel-actions">
+					            			<button type="button" data-id="10" class="todas_sub btn btn-default btn-sm">Seleccionar todas</button>
+				            			</div>
+									</div>
+									<div class="panel-body">
+										<table class="table">
+																					<tr class="">
+												<td>Ver gastos</td>
+												<td><input type="checkbox"  class="checksub check10" name="submodulos[]" value="211"></td>
+											</tr>
+																					</table>
+									</div>
+								</div>
+															<div class="panel panel-default">
+									<div class="panel-heading">
+										<strong>DEV TCEL</strong>
+										<div class="panel-actions">
+					            			<button type="button" data-id="11" class="todas_sub btn btn-default btn-sm">Seleccionar todas</button>
+				            			</div>
+									</div>
+									<div class="panel-body">
+										<table class="table">
+																					<tr class="">
+												<td>Usuarios / Unidades</td>
+												<td><input type="checkbox"  class="checksub check11" name="submodulos[]" value="1001"></td>
+											</tr>
+																						<tr class="">
+												<td>Biblioteca</td>
+												<td><input type="checkbox"  class="checksub check11" name="submodulos[]" value="1002"></td>
+											</tr>
+																						<tr class="">
+												<td>Solicitudes / Novedades</td>
+												<td><input type="checkbox"  class="checksub check11" name="submodulos[]" value="1003"></td>
+											</tr>
+																						<tr class="">
+												<td>Reservas / Instalaciones</td>
+												<td><input type="checkbox"  class="checksub check11" name="submodulos[]" value="1004"></td>
+											</tr>
+																						<tr class="">
+												<td>Comunicados</td>
+												<td><input type="checkbox"  class="checksub check11" name="submodulos[]" value="1005"></td>
+											</tr>
+																						<tr class="">
+												<td>Citaciones</td>
+												<td><input type="checkbox"  class="checksub check11" name="submodulos[]" value="1006"></td>
+											</tr>
+																						<tr class="">
+												<td>Votaciones</td>
+												<td><input type="checkbox"  class="checksub check11" name="submodulos[]" value="1007"></td>
+											</tr>
+																						<tr class="">
+												<td>Configuración</td>
+												<td><input type="checkbox"  class="checksub check11" name="submodulos[]" value="1008"></td>
+											</tr>
+																					</table>
+									</div>
+								</div>
+														</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group"> 
+			    <div class="text-center">
+			      <button type="submit" class="btn btn-warning">Guardar</button>
+			    </div>
+			  </div>
+
+				</fieldset>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>				</div>
+			</div>
+						</div>
+	</div>
+	<div id="dialog" title="Basic dialog" style="display:none;">
+	</div>
+
+	
+</body>
+</html>

@@ -1,0 +1,3663 @@
+<!-- origen: https://upselling.kastor.cl/login/dashboard/index | Administración - upselling -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>
+				Administración - upselling			</title>
+	<link rel="shortcut icon" href="https://repositorio.kastor.cl/edificio_hotfix/img/icono.ico">
+	<script type="text/javascript" src="/login/js/jquery-1.11.1.min.js"></script><script type="text/javascript" src="/login/js/bootstrap.js"></script><script type="text/javascript" src="/login/js/dataTables.min.js"></script><script type="text/javascript" src="/login/js/jquery-ui.js"></script><script type="text/javascript" src="/login/js/dataTables.bootstrap.js"></script><link rel="stylesheet" type="text/css" href="/login/css/bootstrap.css"/><link rel="stylesheet" type="text/css" href="/login/css/bootstrap-theme.css"/><link rel="stylesheet" type="text/css" href="/login/css/dataTables.min.css"/><link rel="stylesheet" type="text/css" href="/login/css/jquery-ui.css"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script>
+	$(function(){
+
+		$(".datepicker").datepicker({dateFormat:'dd-mm-yy'});
+		$(".tabla-herramientas > a").addClass('mostrar-tooltip');
+		$(document).find(".mostrar-tooltip").tooltip({
+				position: {
+					my: "center bottom-15",
+					at: "center top",
+					using: function( position, feedback ) {
+						$( this ).css( position );
+						$( "<div>" )
+						.addClass( "arrow bottom" )
+						.addClass( feedback.vertical )
+						.addClass( feedback.horizontal )
+						.appendTo( this );
+					}
+				}
+			});
+		$(document).find(".mostrar-tooltip2").tooltip({
+				position: {
+					my: "center bottom-15",
+					at: "center arrow top",
+					using: function( position, feedback ) {
+						$( this ).css( position );
+						$( "<div>" )
+						.addClass( "arrow bottom" )
+						.addClass( feedback.vertical )
+						.addClass( feedback.horizontal )
+						.appendTo( this );
+					}
+				}
+			});
+		});
+</script>
+<style>
+
+	.container-general{
+		margin-bottom: 100px;
+		box-shadow: 0 0 5px #888;
+		background: white;
+		height: 100%;
+		width:1200px;
+		-moz-box-shadow: 0 0 5px #888;
+		-webkit-box-shadow: 0 0 5px #888;
+	}
+
+	/* CUSTOM CSS */
+
+	.colorNegro{
+		color:black !important;
+		text-shadow: none !important;
+	}
+
+	.colorBlanco{
+		color:white !important;
+		text-shadow: none !important;
+	}
+
+
+	#bg {
+		min-height: 100%;
+		min-width: 1024px;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+
+
+	body {
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-attachment:fixed;
+		transition: background 0.5s linear;
+		-moz-transition: background 0.5s linear; /* Firefox 4 */
+		-webkit-transition: background 0.5s linear; /* Safari and Chrome */
+		-o-transition: background 0.5s linear; /* Opera */
+		-ms-transition: background 0.5s linear; /* Explorer 10 */
+		font-family: 'Calibri', 'Open Sans', sans-serif !important;
+
+
+
+	}
+	
+	html {
+		height: 100%
+	}
+
+</style>
+
+</head>
+<body class="">
+
+
+<!--<div id="contenedor_imagen_aviso" style='margin: 0 auto !important; text-align: center;width:100%; ' >
+	<img src='http://assets.kastor.cl/informativas/20220113_AVISO3.png' width='25%' style="position: absolute;margin-left: 16%;margin-top: 0%;">
+</div>-->
+	<div class="container container-general" style="">
+						<div class="row" >
+				<div class="col-md-12">
+				<style>
+@media screen and (min-width:768px){
+    .navbar-brand-centered {
+        position: absolute;
+        left: 35.5%;
+        display: block;
+        width: 320px;
+        text-align: center;
+        background-color: #eee;
+    }
+    .navbar>.container .navbar-brand-centered, 
+    .navbar>.container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+    }
+}
+</style>
+<script>
+$(function(){
+	
+});
+</script>
+
+<br>      <nav class="navbar navbar-default" role="navigation">
+    	  <div class="col-md-12">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <div class="navbar-brand" style="margin-top:-6px"><a href="/login/"><img src="https://assets.kastor.cl/images/logo-kastor.png" style="width:100px;"></a></div>
+		       <div class="navbar-brand navbar-brand-centered">upselling</div>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="navbar-brand">
+					
+		      <ul class="nav navbar-nav navbar-right">
+			   	<!--<li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 18px;"><b>Herramientas</b> <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			          	<li><a href="/login/tareas">Tareas</a></li>
+			   						            <li><a href="/login/usuarios">Usuarios</a></li>
+			            <li><a href="/login/perfiles">Perfiles</a></li>
+			            				            		<li><a href="/login/dashboard/sca">Sistema Cobranza</a></li>
+			        					        				          </ul>
+			    </li>-->
+			    <li>
+			    	<a href="javascript:void(0)"><b>hector.barrera@kastor.cl</b> <i class="glyphicon glyphicon-cog"></i></a>
+			    </li>
+		        <li><a href="/login/dashboard/salir"><i class="glyphicon glyphicon-log-out"></i></a></li>		        
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+				<div class="row" style="margin-top:10px;margin-bottom: -7px;">
+			<div class="col-md-12">
+				<div style="width:420px;float:left;">
+			   						            <a class="btn btn-warning btn-sm" href="/login/usuarios">Usuarios</a>
+			           					            	<a class="btn btn-default btn-sm" href="/login/dashboard/sca">Sistema Cobranza </a>
+			        					            	<a class="btn btn-default btn-sm" href="/login/perfiles">Perfiles</a>
+
+			        							<a class="btn btn-default btn-sm" href="/login/tareas">Tareas</a>
+						<a class="btn btn-default btn-sm" href="/login/dashboard/configuracion_uf">UF</a>
+				</div>
+						
+			   						            	<div style="float:left"><a class="btn btn-default btn-sm" href="/login/dashboard/facturas">Facturas Kastor pendientes</a></div>
+			        	
+															<div style="float:left;margin-left:10px;"><a class="btn btn-default btn-sm" href="/login/dashboard/facturas_caleu3">Facturas Caleu pendientes</a></div>
+									    <div>
+					<div style="float:right;margin-top:6px;">
+						<label style="font-size: 14px;border-top-right-radius: 0px;border-bottom-right-radius: 0px" class="label label-default "></span>SOPORTE</label>
+						<label style="background-color: #b2babb  !important;font-size: 14px;margin-left:-5px;border-top-left-radius: 0px;border-bottom-left-radius: 0px" class="label">
+							<span class="glyphicon glyphicon-phone"></span> 02-2 833 8269 / 02-2 833 8307
+						</label>
+					</div>
+					
+					<div style="float:right;margin-top:6px;">
+											</div>
+				</div>
+			</div>
+			
+		</div>
+		<br>
+								<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+	.alert-bg-info {
+		color: #084298 !important;
+		background-color: #cfe2ff !important;
+		border-color: #b6d4fe;
+		text-align: center;
+	}
+	.link-alert_i {
+		color: #084298 !important;
+		text-decoration: none !important;
+	}
+	.modal .close:hover,
+	.modal .close:focus {
+			color: #f53437;
+			text-decoration: none;
+			cursor: pointer;
+		} 
+	.container-k {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.modal {
+		position: fixed;
+		z-index: 3;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.4);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.validador {
+		border: solid 1px #d3d3d3;
+		border-radius: 8px;
+		padding: 2em;
+	}
+
+	.validador p {
+		margin: 9px !important;
+	}
+
+	.modal-content {
+		background-color: #fefefe;
+		padding: 20px;
+		border: 1px solid #888;
+		width: 80%;
+		max-width: 600px;
+		border-radius: 10px;
+		text-align: center;
+	}
+
+	.modal img {
+		width: 190px;
+		margin-bottom: 15px;
+	}
+
+	.modal h3 {
+		font-size: 24px;
+		color: #1F1F47;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+
+	.modal p {
+		font-size: 14px;
+		color: #1F1F47;
+		line-height: 1.6;
+		margin-bottom: 15px;
+		margin-top: 1em;
+	}
+
+	.modal p strong {
+		font-weight: bold;
+	}
+
+	.modal .buttons {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 20px;
+	}
+
+	.modal .buttons button {
+		text-decoration: none;
+		font-size: 14px;
+		padding: 10px 20px;
+		border-radius: 5px;
+		font-weight: bold;
+		color: #1F1F47;
+	}
+
+	.modal .buttons button.primary {
+		background-color: #EB9316;
+		color: white;
+		cursor: pointer;
+		margin: auto;
+		border: 0px;
+	}
+	.modal .buttons button.primary:disabled {
+		background-color: #ccc;
+		color: #333;
+		margin: auto;
+  		border: 0px;
+	}
+        
+</style>
+<!--BPP - Hasta aqui lo de la ventana modal de los terminos y condiciones de uso-->
+<script>
+
+$(function(){
+	var tipoBaja = 0;
+	$(document).on('click','.tipoBaja',function(){
+		tipoBaja = $(this).val();
+	});
+	$(".entrar-comunidad").click(function(){
+		 $("body").append('<form class="entrar" action="/'+$(this).data('edificio')+'/ingresos/login" method="POST">');
+		 $("body form.entrar").append('<input type="hidden" name="data[UsuarioKastor][nombre_usuario_kastor]" value="hector.barrera@kastor.cl"/>');
+		 $("body form.entrar").append('<input type="hidden" name="data[UsuarioKastor][password_usuario_kastor]" value="hector12345"/>');
+		 $("body form.entrar").submit();
+	});
+	$(".btn-eliminar").click(function(e){
+		e.stopPropagation();
+		e.preventDefault();
+		return true;
+	});
+	$(".datatable").dataTable(
+		{
+			"bLengthChange": false,
+			responsive: true,
+			"bPaginate": false,
+			/*"aaSorting": []*/
+		});
+
+	$(".cambiaActivas").change(function(){
+		$val = $(this).val();
+		if($val == 0)
+		{
+			$('.panel-comunidad').fadeIn();
+			$(".busca-grilla").val("");
+		}
+		if($val == 1)
+		{
+			$(".comInactiva").hide();
+			$('.panel-comunidad:not(.comInactiva)').fadeIn();
+			$(".busca-grilla").val("");
+		}
+		if($val == 2)
+		{
+			$(".panel-comunidad").hide();
+			$('.panel-comunidad.comInactiva').fadeIn();
+			$(".busca-grilla").val("");
+		}
+	});
+	 $('.red_circulo').tooltip();   
+
+	$(".cambiaTipoVista").change(function(){
+		$.ajax({
+                            cache: false,
+                            type: "POST",                           
+                            dataType: "html",
+                            url: "/login/dashboard/cambiar_tipo",                           
+                            data: {
+                                tipo: $(this).val(),
+                                ajax: 1
+                            },success: function( msg ){
+                            	window.location.reload();
+                            },                          
+                            error: function( msg ){
+                            	console.log("ERROR");
+                            }
+                        });
+	});
+	$(".busca-grilla").keyup(function(){
+		$(".cambiaActivas").val(0);
+		$(".sin-resultados").hide();
+		var txt = $.trim($(this).val());
+		if(txt.length < 4)
+		{
+			$('.panel-comunidad').fadeIn();
+			return true;
+		}
+		$('.panel-comunidad').hide();
+		var entro = 0;
+		$('.panel-comunidad').each(function(){
+		   if($(this).data('nombre').toUpperCase().indexOf(txt.toUpperCase()) != -1){
+		       $(this).fadeIn();
+		       entro = 1;
+		   }
+		});
+		if(entro == 0)
+		{
+			$(".sin-resultados").show();
+		}
+	});
+	
+	$(".baja-comunidad").click(function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		var nombreComunidad = $(this).data('nombre');
+		var nombreAdm = "upselling";
+		var rutComunidad = $(this).data('rut');
+		var quienElimina = "hector.barrera@kastor.cl";
+		$("#dialog").attr('title','Solicitud de baja');
+		$("#dialog").html("¿Qué desea dar de baja?<br>\
+		<input type='radio' name='baja' class='tipoBaja' checked value='0'/> Comunidad y TCEL\
+		<br><input type='radio' name='baja' class='tipoBaja' value='1'/> TCEL");
+
+		$("#dialog").dialog({
+			modal: true,
+			buttons:{
+			"cancel":{
+      			text:'Cancelar',
+      			"class":"colorNegro",
+      			click: function() {
+      				$("#dialog").dialog('close');
+      				return true;
+        		}
+    		},
+    		"send":{
+      			text:'Aceptar',
+      			"class":"colorBlanco",
+      			click: function() {
+      				var url = "/login/dashboard/dar_baja/"+nombreComunidad+"/"+nombreAdm+"/"+rutComunidad+"/"+quienElimina+"/"+tipoBaja;
+					$.ajax(url);
+					$("#dialog").attr('title','Solicitud enviada exitosamente.');
+					$("#dialog").html("Un ejecutivo se contactará con usted a la brevedad.");
+					$("#dialog").dialog({
+					modal: true,
+					buttons:{
+		    		"send":{
+		      			text:'Aceptar',
+		      			"class":"colorNegro",
+		      			click: function() {
+							$("#dialog").dialog('close');
+		      				return true;	
+		        		}
+		    		},
+		    	}
+		  		});
+					
+        		}
+    		},
+    	}
+  		});
+
+		
+		return false;
+	});
+
+			$("#mostrarNotificacion").dialog({
+		modal:true,
+		position: ['center',15],
+		width:"740px",
+		buttons:{
+			"cancel":{
+      			text:'Cerrar',
+      			"class":"colorNegro",
+      			click: function() {
+      				$("#mostrarNotificacion").dialog('close');
+      				return true;
+        		}
+    		},
+			"noMostrar":{
+      			text:'No volver a mostrar',
+      			"class":"colorNegro",
+      			click: function() {
+
+					$.ajax({ // create an AJAX call...
+					data: {'no_mostrar':'1','subdominio':'upselling.kastor.cl'}, // get the form data
+					type: 'POST', // GET or POST
+					url: 'NoNotificacion', // the file to call
+					success: function(response) { // on success..
+						//console.log(response) // update the DIV
+						}
+					});
+      				$("#mostrarNotificacion").dialog('close');
+      				
+        		}
+    		}
+
+
+    	}
+    });
+	
+});
+
+var autoSizeText;
+
+autoSizeText = function() {
+  var el, elements, _i, _len, _results;
+  elements = $('.resize');
+  if (elements.length < 0) {
+    return;
+  }
+  _results = [];
+  for (_i = 0, _len = elements.length; _i < _len; _i++) {
+    el = elements[_i];
+    _results.push((function(el) {
+      var resizeText, _results1;
+      resizeText = function() {
+        var elNewFontSize;
+        elNewFontSize = (parseInt($(el).css('font-size').slice(0, -2)) - 1) + 'px';
+        return $(el).css('font-size', elNewFontSize);
+      };
+      _results1 = [];
+      while (el.scrollHeight > el.offsetHeight) {
+        _results1.push(resizeText());
+      }
+       return _results1;
+    })(el));
+  }
+  return _results;
+};
+
+$(document).ready(function() {
+  return autoSizeText();
+});
+</script>
+<style>
+.red_circulo {
+    background: #ff0000 none repeat scroll 0 0;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 10px;
+    display: inline-block;
+    height: 18px;
+    min-width: 14px;
+    padding: 0 2px;
+    text-align: center;
+   	margin-left: 0px;
+    margin-top: 0px; 
+    margin-bottom: 0px;
+}
+
+.widget-com
+{
+	text-decoration: none;
+	color:white !important;
+	cursor: pointer !important;
+}
+.colorNegro
+{
+	color:black;
+}
+.colorBlanco
+{
+	color:black;
+}
+.entrar-comunidad
+{
+	cursor: pointer;
+}
+.table > thead > tr > th {
+    vertical-align: middle !important;
+}
+.especialTable td
+{
+padding:2px !important;
+}
+
+
+.atributo{
+	font-size:14px;
+}
+
+
+/**/
+
+.panel-contenedor{
+	background-color: #F2F2F2;
+}
+
+.titulo-tarjeta-activa{
+	/* Original (reset si se requiere):
+	background-color: #EB9316;
+	*/
+	background-color: #f97a4d;
+	color:white;
+	font-size:10px;
+}
+
+.titulo-tarjeta-inactiva{
+	background-color: #bfc9ca;
+	color:white;
+	font-size:10px;
+}
+
+</style>
+
+<!--BPP - Se deja la variable notificar_home con la condicion '-1' para evitar de que se muestre la ventana modal, para volver habilitar se debe dejar en 1 -->
+<div class="row ">
+	<div class="col-xs-12">
+		<div class="panel">
+			<div class="panel-heading panel-contenedor">
+				<strong>Listado de Comunidades (<b> Cantidad: 40</b> )</strong>
+				<!--<label class="label label-default">Vista</label>-->
+				<select style="font-size:14px;color:black;" class="cambiaTipoVista" autocomplete="off">
+					<option value="0">Grilla</option>
+					<option value="1" >Tabla</option>
+				</select>
+				<select style="font-size:14px;color:black;" class="cambiaActivas buscar-form" autocomplete="off" >
+					<option value="0">Todas</option>
+					<option value="1">Activas</option>
+					<option value="2">Inactivas</option>
+				</select>
+				<div class="panel-actions">
+					<div class="input-group buscar-form" style="width:200px;">
+	                    <input type="text" class="form-control input-sm busca-grilla" placeholder="Buscar" />
+	                    <span class="input-group-btn">
+	                        <button class="btn btn-info btn-sm" disabled type="button">
+	                            <i class="glyphicon glyphicon-search"></i>
+	                        </button>
+	                    </span>
+	                </div>
+		      	</div>
+		    </div>
+			<div class="panel-body vistaGrilla" style="padding-left:0px;padding-right:0px;">
+			<div class="col-md-12 sin-resultados" style="display:none;">
+				<div class="alert alert-danger text-center">No se han encontrado comunidades que coincidan con el criterio de búsqueda.</div>
+			</div>
+							<div class="col-xs-3 panel-comunidad " data-nombre="Administradora Acodef Ltda" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_tm" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Administradora Acodef Ltda</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Administradora Acodef Ltda" data-rut="77834007-0"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>77834007-0</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>03-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >09-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>Mar 26</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_tm</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Administradora Acodef Ltda" data-rut="77834007-0">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="COMUNIDAD CAMINO LA VILLA" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_dt" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">COMUNIDAD CAMINO LA VILLA</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="COMUNIDAD CAMINO LA VILLA" data-rut="56068230-1"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56068230-1</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>07-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>01-08 al 30-08-2026</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_dt</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="COMUNIDAD CAMINO LA VILLA" data-rut="56068230-1">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="COMUNIDAD CAMINO LA VILLA" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="alvaro_barahona" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">COMUNIDAD CAMINO LA VILLA</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="COMUNIDAD CAMINO LA VILLA" data-rut="56068230-1"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56068230-1</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>06-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >06-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>01-06-2026 al 30-06-2026</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>alvaro_barahona</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="COMUNIDAD CAMINO LA VILLA" data-rut="56068230-1">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="COMUNIDAD CAMINO LA VILLA" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_swt2" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">COMUNIDAD CAMINO LA VILLA</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="COMUNIDAD CAMINO LA VILLA" data-rut="56068230-1"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56068230-1</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>01-09 al 08-09-2026</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_swt2</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="COMUNIDAD CAMINO LA VILLA" data-rut="56068230-1">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="COMUNIDAD CAMINO LA VILLA" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_gm" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">COMUNIDAD CAMINO LA VILLA</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="COMUNIDAD CAMINO LA VILLA" data-rut="56068230-1"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56068230-1</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >09-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>01-09 al 20-09-2026</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_gm</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="COMUNIDAD CAMINO LA VILLA" data-rut="56068230-1">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="COMUNIDAD EDIFICIO DON ALONSO" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_err" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">COMUNIDAD EDIFICIO DON ALONSO</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="COMUNIDAD EDIFICIO DON ALONSO" data-rut="56036450-4"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56036450-4</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>03-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >03-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>al 10-04-2025</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_err</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="COMUNIDAD EDIFICIO DON ALONSO" data-rut="56036450-4">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="COMUNIDAD EDIFICIO LOFTS BICENTENARIO" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_cqp2" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">COMUNIDAD EDIFICIO LOFTS BICENTENARIO</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="COMUNIDAD EDIFICIO LOFTS BICENTENARIO" data-rut="53303489-6"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53303489-6</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>09-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >09-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>01AL30ABR206</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_cqp2</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="COMUNIDAD EDIFICIO LOFTS BICENTENARIO" data-rut="53303489-6">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="CONDOMINIO CONCEPTO DESIGN SAN DAMIAN" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_sectores_nmb" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">CONDOMINIO CONCEPTO DESIGN SAN DAMIAN</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="CONDOMINIO CONCEPTO DESIGN SAN DAMIAN" data-rut="76485903-0"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>76485903-0</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>21-09-2026</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_sectores_nmb</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="CONDOMINIO CONCEPTO DESIGN SAN DAMIAN" data-rut="76485903-0">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="Comunidad Arrayan" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_sectores_cqp" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Comunidad Arrayan</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Comunidad Arrayan" data-rut="53337039-K"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53337039-K</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >09-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>Septiembre 2026</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_sectores_cqp</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Comunidad Arrayan" data-rut="53337039-K">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="Comunidad Edificio Bellos Horizontes" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_nob" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Comunidad Edificio Bellos Horizontes</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Comunidad Edificio Bellos Horizontes" data-rut="53298119-0"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53298119-0</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >08-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>Agosto 25</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_nob</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Comunidad Edificio Bellos Horizontes" data-rut="53298119-0">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="Comunidad Edificio Galvarino Gallardo" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_yrr" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Comunidad Edificio Galvarino Gallardo</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Comunidad Edificio Galvarino Gallardo" data-rut="53332335-9"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53332335-9</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>09-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >09-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span  data-toggle='tooltip' data-placement='right' title='Notificacones sin leer en TCEL' id='red_alert_general' class='red_circulo'>2</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>diciembre</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_yrr</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Comunidad Edificio Galvarino Gallardo" data-rut="53332335-9">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="Comunidad Edificio Valladolid" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_ec" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Comunidad Edificio Valladolid</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Comunidad Edificio Valladolid" data-rut="56068590-4"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56068590-4</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>02-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >03-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>Febrero 2025</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_ec</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Comunidad Edificio Valladolid" data-rut="56068590-4">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="Comunidad Notocar xD" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_asi" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Comunidad Notocar xD</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Comunidad Notocar xD" data-rut="56026270-1"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56026270-1</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>12-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >01-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>2017 09 001</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_asi</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Comunidad Notocar xD" data-rut="56026270-1">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="Comunidad Nueva España 1" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_fm" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Comunidad Nueva España 1</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Comunidad Nueva España 1" data-rut="56080610-8"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56080610-8</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>09-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >09-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>Septiembre 2026</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_fm</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Comunidad Nueva España 1" data-rut="56080610-8">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="Comunidad QA 1" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_swt" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Comunidad QA 1</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Comunidad QA 1" data-rut="55564317-9"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>55564317-9</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>02-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >02-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small></small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_swt</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Comunidad QA 1" data-rut="55564317-9">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="Condominio Puertas Del Golf Oriente  " style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_sectores_smd" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Condominio Puertas Del Golf Oriente  </h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Condominio Puertas Del Golf Oriente  " data-rut="53301126-8"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53301126-8</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >09-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>al 30-09</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_sectores_smd</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Condominio Puertas Del Golf Oriente  " data-rut="53301126-8">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="Condominio Step Sectores" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_hbg" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Condominio Step Sectores</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Condominio Step Sectores" data-rut="53325823-9"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53325823-9</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>10-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >10-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span  data-toggle='tooltip' data-placement='right' title='Notificacones sin leer en TCEL' id='red_alert_general' class='red_circulo'>17</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small></small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_hbg</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Condominio Step Sectores" data-rut="53325823-9">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="DEMO Otrospagos" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_jml" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">DEMO Otrospagos</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="DEMO Otrospagos" data-rut="65482910-K"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>65482910-K</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>01-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >12-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>Diciembre 2025</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_jml</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="DEMO Otrospagos" data-rut="65482910-K">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="Edificio Don Angel" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_bpp" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Edificio Don Angel</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Edificio Don Angel" data-rut="53316226-6"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53316226-6</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>Agosto 2026</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_bpp</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Edificio Don Angel" data-rut="53316226-6">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="Edificio ISP" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_isp" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Edificio ISP</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Edificio ISP" data-rut="1-9"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:#d4ac0d' title='Comunidad nueva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>1-9</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small></small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_isp</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Edificio ISP" data-rut="1-9">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="Edificio Nataly Farias" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_nfg" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Edificio Nataly Farias</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Edificio Nataly Farias" data-rut=""><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:#d4ac0d' title='Comunidad nueva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'></td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small></small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_nfg</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Edificio Nataly Farias" data-rut="">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="Edificio Rebeca Lobos" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_rls" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Edificio Rebeca Lobos</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Edificio Rebeca Lobos" data-rut=""><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:#d4ac0d' title='Comunidad nueva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'></td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small></small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_rls</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Edificio Rebeca Lobos" data-rut="">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="Edificio San Pablo" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_agg" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Edificio San Pablo</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Edificio San Pablo" data-rut="53336235-4"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53336235-4</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>03-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >03-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span  data-toggle='tooltip' data-placement='right' title='Notificacones sin leer en TCEL' id='red_alert_general' class='red_circulo'>30</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>Desde 30/03 al 07/04/2026</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_agg</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Edificio San Pablo" data-rut="53336235-4">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="Edificios Alderete Cook (sectores)" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_cvl" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Edificios Alderete Cook (sectores)</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Edificios Alderete Cook (sectores)" data-rut="53337009-8"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53337009-8</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >09-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>SEPTIEMBRE 2026</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_cvl</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Edificios Alderete Cook (sectores)" data-rut="53337009-8">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="NMB -Sin sector" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_fq" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">NMB -Sin sector</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="NMB -Sin sector" data-rut="65772240-5"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:#d4ac0d' title='Comunidad nueva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>65772240-5</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small></small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_fq</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="NMB -Sin sector" data-rut="65772240-5">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="OTROSPAGOS V2" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_otrospagos2" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">OTROSPAGOS V2</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="OTROSPAGOS V2" data-rut="56068230-1"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56068230-1</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>09-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >09-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>01-09-2025 al 30-09-2025</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_otrospagos2</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="OTROSPAGOS V2" data-rut="56068230-1">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="P00020 Comunidad Edificio Torre Alcántara" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_drr" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">P00020 Comunidad Edificio Torre Alcántara</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="P00020 Comunidad Edificio Torre Alcántara" data-rut="56049780-6"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56049780-6</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>09-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>9/26</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_drr</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="P00020 Comunidad Edificio Torre Alcántara" data-rut="56049780-6">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="P00270 Comunidad Edificio Consorcio Vida" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_otrospagos" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">P00270 Comunidad Edificio Consorcio Vida</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="P00270 Comunidad Edificio Consorcio Vida" data-rut="56036160-2"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56036160-2</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>08/26</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_otrospagos</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="P00270 Comunidad Edificio Consorcio Vida" data-rut="56036160-2">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="P00450 Comunidad Edificio Matta 530" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_matta" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">P00450 Comunidad Edificio Matta 530</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="P00450 Comunidad Edificio Matta 530" data-rut="53307190-2"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53307190-2</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>06-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>6/25</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_matta</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="P00450 Comunidad Edificio Matta 530" data-rut="53307190-2">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="P00650 Edificio Neruda" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_sectores_drr" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">P00650 Edificio Neruda</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="P00650 Edificio Neruda" data-rut="65065445-5"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>65065445-5</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>10-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>10/25</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_sectores_drr</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="P00650 Edificio Neruda" data-rut="65065445-5">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="P01640 Comunidad Edificio de oficinas San Andres Concepcion" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_smd" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">P01640 Comunidad Edificio de oficinas San Andres Concepcion</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="P01640 Comunidad Edificio de oficinas San Andres Concepcion" data-rut="53319885-6"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53319885-6</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>08/26</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_smd</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="P01640 Comunidad Edificio de oficinas San Andres Concepcion" data-rut="53319885-6">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="P01650 Paseo Los Heroes de Chillan." style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_ico" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">P01650 Paseo Los Heroes de Chillan.</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="P01650 Paseo Los Heroes de Chillan." data-rut="65133752-6"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>65133752-6</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>12-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>12/25</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_ico</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="P01650 Paseo Los Heroes de Chillan." data-rut="65133752-6">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="P01750 Edificio Augusto Leguia 100" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_cqp" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">P01750 Edificio Augusto Leguia 100</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="P01750 Edificio Augusto Leguia 100" data-rut="53301087-3"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53301087-3</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>8/26</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_cqp</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="P01750 Edificio Augusto Leguia 100" data-rut="53301087-3">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="Parque Santa Maria - Departamentos (Respaldo)" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_ico2" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Parque Santa Maria - Departamentos (Respaldo)</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Parque Santa Maria - Departamentos (Respaldo)" data-rut="53325552-3"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53325552-3</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>02-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >04-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>FEBRERO 2026</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_ico2</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Parque Santa Maria - Departamentos (Respaldo)" data-rut="53325552-3">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="Rapelco" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_drr3" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">Rapelco</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="Rapelco" data-rut="10851274-1"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>10851274-1</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>conciliacion 6 agosto</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_drr3</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="Rapelco" data-rut="10851274-1">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="SII Integrado - REC - ESPOZ 3300 - BICENTENARIO" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_rec" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">SII Integrado - REC - ESPOZ 3300 - BICENTENARIO</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="SII Integrado - REC - ESPOZ 3300 - BICENTENARIO" data-rut="53313734-2"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>53313734-2</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>10-2024</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >11-2024</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>22-11-2024</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_rec</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="SII Integrado - REC - ESPOZ 3300 - BICENTENARIO" data-rut="53313734-2">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad comInactiva" data-nombre="SIS 2 - COMUNIDAD CAMINO LA VILLA" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_drr2" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-inactiva"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">SIS 2 - COMUNIDAD CAMINO LA VILLA</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="SIS 2 - COMUNIDAD CAMINO LA VILLA" data-rut="56068230-1"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:red' title='Comunidad inactiva'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56068230-1</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>03-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >04-2025</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>al 09-04-25</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_drr2</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="SIS 2 - COMUNIDAD CAMINO LA VILLA" data-rut="56068230-1">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+								<div class="col-xs-3 panel-comunidad " data-nombre="q" style='background-color:white;'>
+						<div class="panel entrar-comunidad" data-edificio="edificio_cvl2" style='background-color:white;'>
+						    <div class="panel-heading clearfix titulo-tarjeta-activa"  style="height: 55px">
+						    	<div style="width:85%;" class="pull-left">
+						      		<h4 class="panel-title resize" style="width:100%;height:40px;">q</h4>
+						      	</div>
+								<!--
+						      	<div style="width:13%" class="pull-right">
+						        		<a href="#" class="btn btn-md btn-danger baja-comunidad" data-nombre="q" data-rut="56036160-2"><i class="glyphicon glyphicon-trash"></i></a>
+						      	</div>
+								-->
+						    </div>
+						    <div class="panel-body" style="padding-bottom: 0px !important;">
+							<div style='float:right;'>
+								<i class="glyphicon glyphicon-exclamation-sign" style='color:green' title='Comunidad activa'></i>
+							</div>
+							
+						    	<table class="table especialTable" border="0">
+									<tr>
+						    			<td width='60%'><div class="atributo">Rut</<div></td>
+										<td width='40%' style='text-align:center !important;'>56036160-2</td>
+						    		</tr>
+									<tr>
+						    			<td align="right" ><div class="atributo">Último prorrateo</div></td>
+										<td colspan="2" style='text-align:center !important;'>08-2026</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Último cierre Rem</div></td>
+										<td colspan="2" style='text-align:center !important;' >-</td>
+						    		</tr>
+						    		<tr>
+						    			<td align="right"><div class="atributo">Liberado</div></td>
+										<td colspan="2" style='text-align:center !important;' >SI</td>
+						    		</tr>
+															    		<tr>
+						    			<td><b>TCEL</b></td>
+										<td style='text-align:center !important;'><span style="margin-left: 15px;" class='mostrar-tooltip2' title='tucomunidadenlinea.cl'>SI</span> 
+						    			
+						    				<span id='red_alert_general' class='red_circulo' style='background: #ffffff;'>0</span>						    				</div>
+										</td>
+						    		</tr>
+						    		<tr>
+						    			<td colspan='2'><div class="atributo"><strong>Conciliación</strong></div></td>
+						    		</tr>
+									<tr style="height:60px;">
+						    			<td colspan='2' style="border: none;"><small>08/26</small></td>
+						    		</tr>
+						    											<tr>
+						    			<td style="text-align: center !important;" colspan="3"><b>edificio_cvl2</b></td>
+						    		</tr>
+						    								    	</table>
+								<div style='float:right;'>
+									<a href="#" class="baja-comunidad" data-nombre="q" data-rut="56036160-2">
+										<i class="glyphicon glyphicon-trash" style="color:gray;" title="Enviar solicitud de eliminación"></i>
+									</a>
+							</div>
+							</div>
+							
+							
+						</div>
+				</div>
+							</div>
+			<div class="panel-body vistaTabla" style='display:none;'>
+				<table class="datatable table table-striped table-bordered table-hover table-condensed table-grilla" style="">
+			    	<thead>
+			        <tr>
+						<th style="width:10%;">Rut</th>
+						<th style="width:28%;">Nombre Comunidad</th>
+						<!--<th>Dirección</th>-->
+						<th style="width:14%;">Último Gasto Común</th>
+						<th style="width:14%;">Liberación Gasto Común</th>
+						<th style="width:12%;">Remuneraciones</th>
+						<th style="width:11%;">Conciliación</th>
+						<th style="width:11%;"></th>
+			        </tr>
+			        </thead>
+			        <tbody>
+								        <tr>
+						<td style='text-align:center !important;'>77834007-0</td>
+						<td>Administradora Acodef Ltda</td>
+						<!--<td align='left'>Estoril 50 Of 1008 <br>LAS CONDES</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 03-2026<br>
+							<b>Fecha:</b><br> 01-04-2026 12:24						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 01-04-2026 18:55 <br>
+							<b>Notificado:</b> No 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2026<br>
+							<b>Fecha:</b><br> 02-09-2026 11:58</td>
+						<td>Mar 26</td>
+						<td>
+							<button type="button" data-edificio="edificio_tm" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_tm" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56068230-1</td>
+						<td>COMUNIDAD CAMINO LA VILLA</td>
+						<!--<td align='left'>CAMINO LA VILLA 729<br>LO BARNECHEA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 07-2026<br>
+							<b>Fecha:</b><br> 05-08-2026 13:08						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 05-08-2026 13:11 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 25-08-2026 12:48</td>
+						<td>01-08 al 30-08-2026</td>
+						<td>
+							<button type="button" data-edificio="edificio_dt" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_dt" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56068230-1</td>
+						<td>COMUNIDAD CAMINO LA VILLA</td>
+						<!--<td align='left'>CAMINO LA VILLA 729<br>LO BARNECHEA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 06-2026<br>
+							<b>Fecha:</b><br> 02-07-2026 18:01						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 02-07-2026 18:07 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 06-2026<br>
+							<b>Fecha:</b><br> 24-06-2026 13:59</td>
+						<td>01-06-2026 al 30-06-2026</td>
+						<td>
+							<button type="button" data-edificio="alvaro_barahona" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="alvaro_barahona" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56068230-1</td>
+						<td>COMUNIDAD CAMINO LA VILLA</td>
+						<!--<td align='left'>CAMINO LA VILLA 729<br>LO BARNECHEA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 02-09-2026 17:29						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 02-09-2026 17:30 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 25-08-2026 12:48</td>
+						<td>01-09 al 08-09-2026</td>
+						<td>
+							<button type="button" data-edificio="edificio_swt2" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_swt2" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56068230-1</td>
+						<td>COMUNIDAD CAMINO LA VILLA</td>
+						<!--<td align='left'>CAMINO LA VILLA 729<br>LO BARNECHEA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 02-09-2026 17:29						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 02-09-2026 17:30 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2026<br>
+							<b>Fecha:</b><br> 23-09-2026 11:47</td>
+						<td>01-09 al 20-09-2026</td>
+						<td>
+							<button type="button" data-edificio="edificio_gm" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_gm" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56036450-4</td>
+						<td>COMUNIDAD EDIFICIO DON ALONSO</td>
+						<!--<td align='left'>Robinson Crusoe 1189<br>LAS CONDES</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 03-2025<br>
+							<b>Fecha:</b><br> 02-04-2025 10:39						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 02-04-2025 17:51 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 03-2025<br>
+							<b>Fecha:</b><br> 26-03-2025 09:19</td>
+						<td>al 10-04-2025</td>
+						<td>
+							<button type="button" data-edificio="edificio_err" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_err" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53303489-6</td>
+						<td>COMUNIDAD EDIFICIO LOFTS BICENTENARIO</td>
+						<!--<td align='left'>HUERFANOS 3026<br>ALHUÉ</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2026<br>
+							<b>Fecha:</b><br> 07-10-2026 11:35						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> Sin Liberar <br>
+							<b>Notificado:</b> -						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2026<br>
+							<b>Fecha:</b><br> 25-09-2026 16:41</td>
+						<td>01AL30ABR206</td>
+						<td>
+							<button type="button" data-edificio="edificio_cqp2" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_cqp2" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>76485903-0</td>
+						<td>CONDOMINIO CONCEPTO DESIGN SAN DAMIAN</td>
+						<!--<td align='left'>Las Hualtatas 11573<br>VITACURA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 23-09-2026 09:31						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> Sin Liberar <br>
+							<b>Notificado:</b> -						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 25-08-2026 15:38</td>
+						<td>21-09-2026</td>
+						<td>
+							<button type="button" data-edificio="edificio_sectores_nmb" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_sectores_nmb" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53337039-K</td>
+						<td>Comunidad Arrayan</td>
+						<!--<td align='left'>La dehesa  1894<br>LO BARNECHEA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 15-09-2026 12:15						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 15-09-2026 12:18 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2026<br>
+							<b>Fecha:</b><br> 25-09-2026 12:57</td>
+						<td>Septiembre 2026</td>
+						<td>
+							<button type="button" data-edificio="edificio_sectores_cqp" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_sectores_cqp" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53298119-0</td>
+						<td>Comunidad Edificio Bellos Horizontes</td>
+						<!--<td align='left'>BELLO HORIZONTE 933<br>SANTIAGO</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2025<br>
+							<b>Fecha:</b><br> 03-09-2025 17:44						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 03-09-2025 17:49 <br>
+							<b>Notificado:</b> No 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2025<br>
+							<b>Fecha:</b><br> 03-09-2025 16:20</td>
+						<td>Agosto 25</td>
+						<td>
+							<button type="button" data-edificio="edificio_nob" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_nob" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53332335-9</td>
+						<td>Comunidad Edificio Galvarino Gallardo</td>
+						<!--<td align='left'>Galvarino Gallardo 1683<br>PROVIDENCIA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2026<br>
+							<b>Fecha:</b><br> 14-10-2026 12:33						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> Sin Liberar <br>
+							<b>Notificado:</b> -						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2026<br>
+							<b>Fecha:</b><br> 29-09-2026 18:23</td>
+						<td>diciembre</td>
+						<td>
+							<button type="button" data-edificio="edificio_yrr" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_yrr" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56068590-4</td>
+						<td>Comunidad Edificio Valladolid</td>
+						<!--<td align='left'>Monseñor Escriva de Balaguer  9423<br>VITACURA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 02-2025<br>
+							<b>Fecha:</b><br> 07-03-2025 11:28						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 07-03-2025 11:31 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 03-2025<br>
+							<b>Fecha:</b><br> 24-03-2025 16:27</td>
+						<td>Febrero 2025</td>
+						<td>
+							<button type="button" data-edificio="edificio_ec" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_ec" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56026270-1</td>
+						<td>Comunidad Notocar xD</td>
+						<!--<td align='left'>Avenida Cristobal Colon 3940<br>LAS CONDES</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 12-2025<br>
+							<b>Fecha:</b><br> 13-02-2026 04:12						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 13-02-2026 06:04 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 01-2026<br>
+							<b>Fecha:</b><br> 19-02-2026 05:38</td>
+						<td>2017 09 001</td>
+						<td>
+							<button type="button" data-edificio="edificio_asi" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_asi" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56080610-8</td>
+						<td>Comunidad Nueva España 1</td>
+						<!--<td align='left'>La Castellana Norte 100<br>LAS CONDES</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2026<br>
+							<b>Fecha:</b><br> 05-10-2026 16:43						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 05-10-2026 17:00 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2026<br>
+							<b>Fecha:</b><br> 28-09-2026 18:23</td>
+						<td>Septiembre 2026</td>
+						<td>
+							<button type="button" data-edificio="edificio_fm" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_fm" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>55564317-9</td>
+						<td>Comunidad QA 1</td>
+						<!--<td align='left'>Av. Prueba 1234<br>CORONEL</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 02-2026<br>
+							<b>Fecha:</b><br> 25-09-2026 10:53						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> Sin Liberar <br>
+							<b>Notificado:</b> -						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 02-2026<br>
+							<b>Fecha:</b><br> 24-09-2026 12:11</td>
+						<td></td>
+						<td>
+							<button type="button" data-edificio="edificio_swt" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_swt" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53301126-8</td>
+						<td>Condominio Puertas Del Golf Oriente  </td>
+						<!--<td align='left'>El Golf 201 - 203<br>LAS CONDES</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 15-09-2026 15:53						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 15-09-2026 16:05 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2026<br>
+							<b>Fecha:</b><br> 24-09-2026 11:43</td>
+						<td>al 30-09</td>
+						<td>
+							<button type="button" data-edificio="edificio_sectores_smd" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_sectores_smd" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53325823-9</td>
+						<td>Condominio Step Sectores</td>
+						<!--<td align='left'>San Martin 841<br>SANTIAGO</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 10-2025<br>
+							<b>Fecha:</b><br> 24-11-2025 14:48						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 26-11-2025 14:21 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 10-2025<br>
+							<b>Fecha:</b><br> 25-11-2025 14:44</td>
+						<td></td>
+						<td>
+							<button type="button" data-edificio="edificio_hbg" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_hbg" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>65482910-K</td>
+						<td>DEMO Otrospagos</td>
+						<!--<td align='left'>Villa Los Alerces<br>LO BARNECHEA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 01-2026<br>
+							<b>Fecha:</b><br> 26-08-2026 12:01						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 26-08-2026 14:26 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 12-2025<br>
+							<b>Fecha:</b><br> 23-12-2025 18:38</td>
+						<td>Diciembre 2025</td>
+						<td>
+							<button type="button" data-edificio="edificio_jml" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_jml" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53316226-6</td>
+						<td>Edificio Don Angel</td>
+						<!--<td align='left'>Angel Pino 3412<br>ÑUÑOA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 11-09-2026 13:43						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> Sin Liberar <br>
+							<b>Notificado:</b> -						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 25-08-2026 20:37</td>
+						<td>Agosto 2026</td>
+						<td>
+							<button type="button" data-edificio="edificio_bpp" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_bpp" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>1-9</td>
+						<td>Edificio ISP</td>
+						<!--<td align='left'>los paltos 6767<br>ALHUÉ</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> -						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> Sin Liberar <br>
+							<b>Notificado:</b> -						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td></td>
+						<td>
+							<button type="button" data-edificio="edificio_isp" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_isp" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'></td>
+						<td>Edificio Nataly Farias</td>
+						<!--<td align='left'><br></td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> -						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> Sin Liberar <br>
+							<b>Notificado:</b> -						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td></td>
+						<td>
+							<button type="button" data-edificio="edificio_nfg" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_nfg" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'></td>
+						<td>Edificio Rebeca Lobos</td>
+						<!--<td align='left'><br></td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> -						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> Sin Liberar <br>
+							<b>Notificado:</b> -						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td></td>
+						<td>
+							<button type="button" data-edificio="edificio_rls" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_rls" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53336235-4</td>
+						<td>Edificio San Pablo</td>
+						<!--<td align='left'>San Pablo 1433<br>SANTIAGO</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 03-2026<br>
+							<b>Fecha:</b><br> 01-04-2026 16:42						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 07-04-2026 18:40 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 03-2026<br>
+							<b>Fecha:</b><br> 24-03-2026 09:43</td>
+						<td>Desde 30/03 al 07/04/2026</td>
+						<td>
+							<button type="button" data-edificio="edificio_agg" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_agg" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53337009-8</td>
+						<td>Edificios Alderete Cook (sectores)</td>
+						<!--<td align='left'>Francisco Cook 831<br>LAS CONDES</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 14-09-2026 09:19						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 15-09-2026 18:25 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2026<br>
+							<b>Fecha:</b><br> 29-09-2026 12:56</td>
+						<td>SEPTIEMBRE 2026</td>
+						<td>
+							<button type="button" data-edificio="edificio_cvl" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_cvl" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>65772240-5</td>
+						<td>NMB -Sin sector</td>
+						<!--<td align='left'>Upselling 1234<br></td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> -						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> Sin Liberar <br>
+							<b>Notificado:</b> -						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td></td>
+						<td>
+							<button type="button" data-edificio="edificio_fq" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_fq" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56068230-1</td>
+						<td>OTROSPAGOS V2</td>
+						<!--<td align='left'>CAMINO LA VILLA 729<br>LO BARNECHEA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2025<br>
+							<b>Fecha:</b><br> 01-10-2025 12:16						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 01-10-2025 16:43 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2025<br>
+							<b>Fecha:</b><br> 28-09-2025 18:19</td>
+						<td>01-09-2025 al 30-09-2025</td>
+						<td>
+							<button type="button" data-edificio="edificio_otrospagos2" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_otrospagos2" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56049780-6</td>
+						<td>P00020 Comunidad Edificio Torre Alcántara</td>
+						<!--<td align='left'>Alcántara  44<br>LAS CONDES</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 09-2026<br>
+							<b>Fecha:</b><br> 28-09-2026 10:14						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 02-10-2026 17:07 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td>9/26</td>
+						<td>
+							<button type="button" data-edificio="edificio_drr" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_drr" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56036160-2</td>
+						<td>P00270 Comunidad Edificio Consorcio Vida</td>
+						<!--<td align='left'>Av.el bosque s. 130 comuna las condes<br>LAS CONDES</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 01-09-2026 11:06						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 01-09-2026 18:19 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td>08/26</td>
+						<td>
+							<button type="button" data-edificio="edificio_otrospagos" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_otrospagos" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53307190-2</td>
+						<td>P00450 Comunidad Edificio Matta 530</td>
+						<!--<td align='left'>Rosario Norte 530<br>LAS CONDES</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 06-2025<br>
+							<b>Fecha:</b><br> 18-07-2025 19:06						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 25-07-2025 21:36 <br>
+							<b>Notificado:</b> No 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td>6/25</td>
+						<td>
+							<button type="button" data-edificio="edificio_matta" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_matta" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>65065445-5</td>
+						<td>P00650 Edificio Neruda</td>
+						<!--<td align='left'>Av. Del Valle Sur N 614<br>HUECHURABA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 10-2025<br>
+							<b>Fecha:</b><br> 04-11-2025 11:43						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 04-11-2025 11:45 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td>10/25</td>
+						<td>
+							<button type="button" data-edificio="edificio_sectores_drr" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_sectores_drr" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53319885-6</td>
+						<td>P01640 Comunidad Edificio de oficinas San Andres Concepcion</td>
+						<!--<td align='left'>Avda san andres 43 <br>CONCEPCIÓN</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 04-09-2026 12:18						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 07-09-2026 11:48 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td>08/26</td>
+						<td>
+							<button type="button" data-edificio="edificio_smd" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_smd" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>65133752-6</td>
+						<td>P01650 Paseo Los Heroes de Chillan.</td>
+						<!--<td align='left'>Av. Libertad 455<br></td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 12-2025<br>
+							<b>Fecha:</b><br> 06-01-2026 11:53						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 06-01-2026 11:58 <br>
+							<b>Notificado:</b> No 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td>12/25</td>
+						<td>
+							<button type="button" data-edificio="edificio_ico" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_ico" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53301087-3</td>
+						<td>P01750 Edificio Augusto Leguia 100</td>
+						<!--<td align='left'>Augusto Leguía 100<br>LAS CONDES</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 27-08-2026 13:37						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 08-09-2026 14:58 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td>8/26</td>
+						<td>
+							<button type="button" data-edificio="edificio_cqp" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_cqp" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53325552-3</td>
+						<td>Parque Santa Maria - Departamentos (Respaldo)</td>
+						<!--<td align='left'>Carolina Rabat 850<br>VITACURA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 02-2026<br>
+							<b>Fecha:</b><br> 09-03-2026 18:15						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 09-03-2026 19:30 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 04-2026<br>
+							<b>Fecha:</b><br> 09-04-2026 10:49</td>
+						<td>FEBRERO 2026</td>
+						<td>
+							<button type="button" data-edificio="edificio_ico2" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_ico2" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>10851274-1</td>
+						<td>Rapelco</td>
+						<!--<td align='left'>Rapelco <br>LAS CABRAS</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2025<br>
+							<b>Fecha:</b><br> 04-08-2025 10:24						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 04-08-2025 10:25 <br>
+							<b>Notificado:</b> No 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td>conciliacion 6 agosto</td>
+						<td>
+							<button type="button" data-edificio="edificio_drr3" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_drr3" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>53313734-2</td>
+						<td>SII Integrado - REC - ESPOZ 3300 - BICENTENARIO</td>
+						<!--<td align='left'>Avenida Bicentenario 4063<br>VITACURA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 10-2024<br>
+							<b>Fecha:</b><br> 11-11-2024 19:13						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 11-11-2024 19:28 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 11-2024<br>
+							<b>Fecha:</b><br> 18-11-2024 13:00</td>
+						<td>22-11-2024</td>
+						<td>
+							<button type="button" data-edificio="edificio_rec" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_rec" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56068230-1</td>
+						<td>SIS 2 - COMUNIDAD CAMINO LA VILLA</td>
+						<!--<td align='left'>CAMINO LA VILLA 729<br>LO BARNECHEA</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 03-2025<br>
+							<b>Fecha:</b><br> 07-04-2025 13:24						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 07-04-2025 13:25 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> 04-2025<br>
+							<b>Fecha:</b><br> 13-04-2025 22:58</td>
+						<td>al 09-04-25</td>
+						<td>
+							<button type="button" data-edificio="edificio_drr2" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_drr2" >Acceder</button>				
+						</td>
+					</tr>
+			        			        <tr>
+						<td style='text-align:center !important;'>56036160-2</td>
+						<td>q</td>
+						<!--<td align='left'>Av.el bosque s. 130 comuna las condes<br>LAS CONDES</td> -->
+						<td style="text-align:left !important">
+							<b>Mes:</b> 08-2026<br>
+							<b>Fecha:</b><br> 01-09-2026 11:06						</td>
+						<td style="text-align:left !important">
+							<b>Fecha:</b><br> 01-09-2026 18:19 <br>
+							<b>Notificado:</b> Si 						</td>
+						<td style="text-align:left !important">
+							<b>Mes:</b> -<br>
+							<b>Fecha:</b><br> Sin cerrar</td>
+						<td>08/26</td>
+						<td>
+							<button type="button" data-edificio="edificio_cvl2" class="btn entrar-comunidad btn-sm btn-warning mostrar-tooltip2"  title="edificio_cvl2" >Acceder</button>				
+						</td>
+					</tr>
+			        			        </tbody>
+			        <tfoot>
+			        </tfoot>
+			    </table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+				</div>
+			</div>
+						</div>
+	</div>
+	<div id="dialog" title="Basic dialog" style="display:none;">
+	</div>
+
+	
+</body>
+</html>

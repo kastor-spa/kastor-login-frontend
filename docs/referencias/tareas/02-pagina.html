@@ -1,0 +1,454 @@
+<!-- origen: https://upselling.kastor.cl/login/tareas/agregar | Administración - upselling -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>
+				Administración - upselling			</title>
+	<link rel="shortcut icon" href="https://repositorio.kastor.cl/edificio_hotfix/img/icono.ico">
+	<script type="text/javascript" src="/login/js/jquery-1.11.1.min.js"></script><script type="text/javascript" src="/login/js/bootstrap.js"></script><script type="text/javascript" src="/login/js/dataTables.min.js"></script><script type="text/javascript" src="/login/js/jquery-ui.js"></script><script type="text/javascript" src="/login/js/dataTables.bootstrap.js"></script><link rel="stylesheet" type="text/css" href="/login/css/bootstrap.css"/><link rel="stylesheet" type="text/css" href="/login/css/bootstrap-theme.css"/><link rel="stylesheet" type="text/css" href="/login/css/dataTables.min.css"/><link rel="stylesheet" type="text/css" href="/login/css/jquery-ui.css"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script>
+	$(function(){
+
+		$(".datepicker").datepicker({dateFormat:'dd-mm-yy'});
+		$(".tabla-herramientas > a").addClass('mostrar-tooltip');
+		$(document).find(".mostrar-tooltip").tooltip({
+				position: {
+					my: "center bottom-15",
+					at: "center top",
+					using: function( position, feedback ) {
+						$( this ).css( position );
+						$( "<div>" )
+						.addClass( "arrow bottom" )
+						.addClass( feedback.vertical )
+						.addClass( feedback.horizontal )
+						.appendTo( this );
+					}
+				}
+			});
+		$(document).find(".mostrar-tooltip2").tooltip({
+				position: {
+					my: "center bottom-15",
+					at: "center arrow top",
+					using: function( position, feedback ) {
+						$( this ).css( position );
+						$( "<div>" )
+						.addClass( "arrow bottom" )
+						.addClass( feedback.vertical )
+						.addClass( feedback.horizontal )
+						.appendTo( this );
+					}
+				}
+			});
+		});
+</script>
+<style>
+
+	.container-general{
+		margin-bottom: 100px;
+		box-shadow: 0 0 5px #888;
+		background: white;
+		height: 100%;
+		width:1200px;
+		-moz-box-shadow: 0 0 5px #888;
+		-webkit-box-shadow: 0 0 5px #888;
+	}
+
+	/* CUSTOM CSS */
+
+	.colorNegro{
+		color:black !important;
+		text-shadow: none !important;
+	}
+
+	.colorBlanco{
+		color:white !important;
+		text-shadow: none !important;
+	}
+
+
+	#bg {
+		min-height: 100%;
+		min-width: 1024px;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+
+
+	body {
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-attachment:fixed;
+		transition: background 0.5s linear;
+		-moz-transition: background 0.5s linear; /* Firefox 4 */
+		-webkit-transition: background 0.5s linear; /* Safari and Chrome */
+		-o-transition: background 0.5s linear; /* Opera */
+		-ms-transition: background 0.5s linear; /* Explorer 10 */
+		font-family: 'Calibri', 'Open Sans', sans-serif !important;
+
+
+
+	}
+	
+	html {
+		height: 100%
+	}
+
+</style>
+
+</head>
+<body class="">
+
+
+<!--<div id="contenedor_imagen_aviso" style='margin: 0 auto !important; text-align: center;width:100%; ' >
+	<img src='http://assets.kastor.cl/informativas/20220113_AVISO3.png' width='25%' style="position: absolute;margin-left: 16%;margin-top: 0%;">
+</div>-->
+	<div class="container container-general" style="">
+						<div class="row" >
+				<div class="col-md-12">
+				<style>
+@media screen and (min-width:768px){
+    .navbar-brand-centered {
+        position: absolute;
+        left: 35.5%;
+        display: block;
+        width: 320px;
+        text-align: center;
+        background-color: #eee;
+    }
+    .navbar>.container .navbar-brand-centered, 
+    .navbar>.container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+    }
+}
+</style>
+<script>
+$(function(){
+	
+});
+</script>
+
+<br>      <nav class="navbar navbar-default" role="navigation">
+    	  <div class="col-md-12">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <div class="navbar-brand" style="margin-top:-6px"><a href="/login/"><img src="https://assets.kastor.cl/images/logo-kastor.png" style="width:100px;"></a></div>
+		       <div class="navbar-brand navbar-brand-centered">upselling</div>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="navbar-brand">
+					
+		      <ul class="nav navbar-nav navbar-right">
+			   	<!--<li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 18px;"><b>Herramientas</b> <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			          	<li><a href="/login/tareas">Tareas</a></li>
+			   						            <li><a href="/login/usuarios">Usuarios</a></li>
+			            <li><a href="/login/perfiles">Perfiles</a></li>
+			            				            		<li><a href="/login/dashboard/sca">Sistema Cobranza</a></li>
+			        					        				          </ul>
+			    </li>-->
+			    <li>
+			    	<a href="javascript:void(0)"><b>hector.barrera@kastor.cl</b> <i class="glyphicon glyphicon-cog"></i></a>
+			    </li>
+		        <li><a href="/login/dashboard/salir"><i class="glyphicon glyphicon-log-out"></i></a></li>		        
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+				<div class="row" style="margin-top:10px;margin-bottom: -7px;">
+			<div class="col-md-12">
+				<div style="width:420px;float:left;">
+			   						            <a class="btn btn-warning btn-sm" href="/login/usuarios">Usuarios</a>
+			           					            	<a class="btn btn-default btn-sm" href="/login/dashboard/sca">Sistema Cobranza </a>
+			        					            	<a class="btn btn-default btn-sm" href="/login/perfiles">Perfiles</a>
+
+			        							<a class="btn btn-default btn-sm" href="/login/tareas">Tareas</a>
+						<a class="btn btn-default btn-sm" href="/login/dashboard/configuracion_uf">UF</a>
+				</div>
+						
+			   						            	<div style="float:left"><a class="btn btn-default btn-sm" href="/login/dashboard/facturas">Facturas Kastor pendientes</a></div>
+			        	
+															<div style="float:left;margin-left:10px;"><a class="btn btn-default btn-sm" href="/login/dashboard/facturas_caleu3">Facturas Caleu pendientes</a></div>
+									    <div>
+					<div style="float:right;margin-top:6px;">
+						<label style="font-size: 14px;border-top-right-radius: 0px;border-bottom-right-radius: 0px" class="label label-default "></span>SOPORTE</label>
+						<label style="background-color: #b2babb  !important;font-size: 14px;margin-left:-5px;border-top-left-radius: 0px;border-bottom-left-radius: 0px" class="label">
+							<span class="glyphicon glyphicon-phone"></span> 02-2 833 8269 / 02-2 833 8307
+						</label>
+					</div>
+					
+					<div style="float:right;margin-top:6px;">
+											</div>
+				</div>
+			</div>
+			
+		</div>
+		<br>
+								<script>
+$(function(){
+	$("form").submit(function(){
+		var cantidadCom = $('.comunidades:checked').length;
+		if(cantidadCom < 1)
+		{
+			alert("¡Debes seleccionar al menos una Comunidad!");
+			return false;
+		}
+	});
+});
+</script>
+<style>
+tr.activeLine
+{
+	background: orange;
+	color:white;
+	font-weight: bold;
+}
+</style>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			<strong>Administrador de Tareas</strong>
+				<div class="panel-actions">
+		            <a href="/login/tareas" class="btn btn-default btn-sm">
+		                <span class="glyphicon glyphicon-arrow-left"></span> Volver
+					</a>
+	            </div>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal" method="post">
+				<fieldset>
+
+				<!-- Form Name -->
+				<legend>Nueva tarea</legend>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Tarea</label>  
+				  <div class="col-md-4">
+				  <textarea name="tarea" required style="width:500px;height:200px;resize: none;"></textarea>
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Fecha desde</label>  
+				  <div class="col-md-4">
+				  <input id="" name="fecha_inicio" required value="14-10-2026" placeholder="" class="datepicker form-control input-md" type="text">
+				    
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Fecha hasta</label>  
+				  <div class="col-md-4">
+				  <input id="" name="fecha_hasta" required value="14-10-2026" placeholder="" class="datepicker form-control input-md" type="text">
+				    
+				  </div>
+				</div>
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<strong>Listado de Comunidades</strong>
+							<!--<div class="panel-actions">
+		            			<button type="button" class="todas btn btn-default btn-sm">Seleccionar todas</button>
+	            			</div>-->
+						</div>
+						<div class="panel-body">
+							<table class="table">
+							<thead>
+								<tr>
+									<th>Nombre comunidad</th>
+									<th>Asignar</th>
+								</tr>
+							</thead>
+							<tbody>
+															<tr>
+									<td>Administradora Acodef Ltda</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="11847"></td>
+								</tr>
+															<tr>
+									<td>COMUNIDAD CAMINO LA VILLA</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="10156"></td>
+								</tr>
+															<tr>
+									<td>COMUNIDAD CAMINO LA VILLA</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="12040"></td>
+								</tr>
+															<tr>
+									<td>COMUNIDAD CAMINO LA VILLA</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="12173"></td>
+								</tr>
+															<tr>
+									<td>COMUNIDAD CAMINO LA VILLA</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="12182"></td>
+								</tr>
+															<tr>
+									<td>COMUNIDAD EDIFICIO DON ALONSO</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="8811"></td>
+								</tr>
+															<tr>
+									<td>COMUNIDAD EDIFICIO LOFTS BICENTENARIO</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="10189"></td>
+								</tr>
+															<tr>
+									<td>CONDOMINIO CONCEPTO DESIGN SAN DAMIAN</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="9858"></td>
+								</tr>
+															<tr>
+									<td>Comunidad Arrayan</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="9748"></td>
+								</tr>
+															<tr>
+									<td>Comunidad Edificio Bellos Horizontes</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="10761"></td>
+								</tr>
+															<tr>
+									<td>Comunidad Edificio Galvarino Gallardo</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="9780"></td>
+								</tr>
+															<tr>
+									<td>Comunidad Edificio Valladolid</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="10157"></td>
+								</tr>
+															<tr>
+									<td>Comunidad Notocar xD</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="9014"></td>
+								</tr>
+															<tr>
+									<td>Comunidad Nueva España 1</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="11846"></td>
+								</tr>
+															<tr>
+									<td>Comunidad QA 1</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="12164"></td>
+								</tr>
+															<tr>
+									<td>Condominio Puertas Del Golf Oriente  </td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="9749"></td>
+								</tr>
+															<tr>
+									<td>Condominio Step Sectores</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="10512"></td>
+								</tr>
+															<tr>
+									<td>DEMO Otrospagos</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="10181"></td>
+								</tr>
+															<tr>
+									<td>Edificio Don Angel</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="8476"></td>
+								</tr>
+															<tr>
+									<td>Edificio ISP</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="10359"></td>
+								</tr>
+															<tr>
+									<td>Edificio Nataly Farias</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="12128"></td>
+								</tr>
+															<tr>
+									<td>Edificio Rebeca Lobos</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="12127"></td>
+								</tr>
+															<tr>
+									<td>Edificio San Pablo</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="11150"></td>
+								</tr>
+															<tr>
+									<td>Edificios Alderete Cook (sectores)</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="8653"></td>
+								</tr>
+															<tr>
+									<td>NMB -Sin sector</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="10158"></td>
+								</tr>
+															<tr>
+									<td>OTROSPAGOS V2</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="11534"></td>
+								</tr>
+															<tr>
+									<td>P00020 Comunidad Edificio Torre Alcántara</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="8512"></td>
+								</tr>
+															<tr>
+									<td>P00270 Comunidad Edificio Consorcio Vida</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="10682"></td>
+								</tr>
+															<tr>
+									<td>P00450 Comunidad Edificio Matta 530</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="11320"></td>
+								</tr>
+															<tr>
+									<td>P00650 Edificio Neruda</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="9375"></td>
+								</tr>
+															<tr>
+									<td>P01640 Comunidad Edificio de oficinas San Andres Concepcion</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="9147"></td>
+								</tr>
+															<tr>
+									<td>P01650 Paseo Los Heroes de Chillan.</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="8756"></td>
+								</tr>
+															<tr>
+									<td>P01750 Edificio Augusto Leguia 100</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="9146"></td>
+								</tr>
+															<tr>
+									<td>Parque Santa Maria - Departamentos (Respaldo)</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="10681"></td>
+								</tr>
+															<tr>
+									<td>Rapelco</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="11044"></td>
+								</tr>
+															<tr>
+									<td>SII Integrado - REC - ESPOZ 3300 - BICENTENARIO</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="10760"></td>
+								</tr>
+															<tr>
+									<td>SIS 2 - COMUNIDAD CAMINO LA VILLA</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="11043"></td>
+								</tr>
+															<tr>
+									<td>q</td>
+									<td><input type="radio" class="comunidades" name="comunidades" value="10234"></td>
+								</tr>
+														</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="form-group"> 
+			    <div class="text-center">
+			      <button type="submit" class="btn btn-warning">Guardar</button>
+			    </div>
+			  </div>
+
+				</fieldset>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>				</div>
+			</div>
+						</div>
+	</div>
+	<div id="dialog" title="Basic dialog" style="display:none;">
+	</div>
+
+	
+</body>
+</html>

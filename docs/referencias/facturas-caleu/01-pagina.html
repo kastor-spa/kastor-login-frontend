@@ -1,0 +1,540 @@
+<!-- origen: https://upselling.kastor.cl/login/dashboard/facturas_caleu3 | Administración - upselling -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>
+				Administración - upselling			</title>
+	<link rel="shortcut icon" href="https://repositorio.kastor.cl/edificio_hotfix/img/icono.ico">
+	<script type="text/javascript" src="/login/js/jquery-1.11.1.min.js"></script><script type="text/javascript" src="/login/js/bootstrap.js"></script><script type="text/javascript" src="/login/js/dataTables.min.js"></script><script type="text/javascript" src="/login/js/jquery-ui.js"></script><script type="text/javascript" src="/login/js/dataTables.bootstrap.js"></script><link rel="stylesheet" type="text/css" href="/login/css/bootstrap.css"/><link rel="stylesheet" type="text/css" href="/login/css/bootstrap-theme.css"/><link rel="stylesheet" type="text/css" href="/login/css/dataTables.min.css"/><link rel="stylesheet" type="text/css" href="/login/css/jquery-ui.css"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script>
+	$(function(){
+
+		$(".datepicker").datepicker({dateFormat:'dd-mm-yy'});
+		$(".tabla-herramientas > a").addClass('mostrar-tooltip');
+		$(document).find(".mostrar-tooltip").tooltip({
+				position: {
+					my: "center bottom-15",
+					at: "center top",
+					using: function( position, feedback ) {
+						$( this ).css( position );
+						$( "<div>" )
+						.addClass( "arrow bottom" )
+						.addClass( feedback.vertical )
+						.addClass( feedback.horizontal )
+						.appendTo( this );
+					}
+				}
+			});
+		$(document).find(".mostrar-tooltip2").tooltip({
+				position: {
+					my: "center bottom-15",
+					at: "center arrow top",
+					using: function( position, feedback ) {
+						$( this ).css( position );
+						$( "<div>" )
+						.addClass( "arrow bottom" )
+						.addClass( feedback.vertical )
+						.addClass( feedback.horizontal )
+						.appendTo( this );
+					}
+				}
+			});
+		});
+</script>
+<style>
+
+	.container-general{
+		margin-bottom: 100px;
+		box-shadow: 0 0 5px #888;
+		background: white;
+		height: 100%;
+		width:1200px;
+		-moz-box-shadow: 0 0 5px #888;
+		-webkit-box-shadow: 0 0 5px #888;
+	}
+
+	/* CUSTOM CSS */
+
+	.colorNegro{
+		color:black !important;
+		text-shadow: none !important;
+	}
+
+	.colorBlanco{
+		color:white !important;
+		text-shadow: none !important;
+	}
+
+
+	#bg {
+		min-height: 100%;
+		min-width: 1024px;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+
+
+	body {
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-attachment:fixed;
+		transition: background 0.5s linear;
+		-moz-transition: background 0.5s linear; /* Firefox 4 */
+		-webkit-transition: background 0.5s linear; /* Safari and Chrome */
+		-o-transition: background 0.5s linear; /* Opera */
+		-ms-transition: background 0.5s linear; /* Explorer 10 */
+		font-family: 'Calibri', 'Open Sans', sans-serif !important;
+
+
+
+	}
+	
+	html {
+		height: 100%
+	}
+
+</style>
+
+</head>
+<body class="">
+
+
+<!--<div id="contenedor_imagen_aviso" style='margin: 0 auto !important; text-align: center;width:100%; ' >
+	<img src='http://assets.kastor.cl/informativas/20220113_AVISO3.png' width='25%' style="position: absolute;margin-left: 16%;margin-top: 0%;">
+</div>-->
+	<div class="container container-general" style="">
+						<div class="row" >
+				<div class="col-md-12">
+				<style>
+@media screen and (min-width:768px){
+    .navbar-brand-centered {
+        position: absolute;
+        left: 35.5%;
+        display: block;
+        width: 320px;
+        text-align: center;
+        background-color: #eee;
+    }
+    .navbar>.container .navbar-brand-centered, 
+    .navbar>.container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+    }
+}
+</style>
+<script>
+$(function(){
+	
+});
+</script>
+
+<br>      <nav class="navbar navbar-default" role="navigation">
+    	  <div class="col-md-12">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <div class="navbar-brand" style="margin-top:-6px"><a href="/login/"><img src="https://assets.kastor.cl/images/logo-kastor.png" style="width:100px;"></a></div>
+		       <div class="navbar-brand navbar-brand-centered">upselling</div>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="navbar-brand">
+					
+		      <ul class="nav navbar-nav navbar-right">
+			   	<!--<li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 18px;"><b>Herramientas</b> <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			          	<li><a href="/login/tareas">Tareas</a></li>
+			   						            <li><a href="/login/usuarios">Usuarios</a></li>
+			            <li><a href="/login/perfiles">Perfiles</a></li>
+			            				            		<li><a href="/login/dashboard/sca">Sistema Cobranza</a></li>
+			        					        				          </ul>
+			    </li>-->
+			    <li>
+			    	<a href="javascript:void(0)"><b>hector.barrera@kastor.cl</b> <i class="glyphicon glyphicon-cog"></i></a>
+			    </li>
+		        <li><a href="/login/dashboard/salir"><i class="glyphicon glyphicon-log-out"></i></a></li>		        
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+				<div class="row" style="margin-top:10px;margin-bottom: -7px;">
+			<div class="col-md-12">
+				<div style="width:420px;float:left;">
+			   						            <a class="btn btn-warning btn-sm" href="/login/usuarios">Usuarios</a>
+			           					            	<a class="btn btn-default btn-sm" href="/login/dashboard/sca">Sistema Cobranza </a>
+			        					            	<a class="btn btn-default btn-sm" href="/login/perfiles">Perfiles</a>
+
+			        							<a class="btn btn-default btn-sm" href="/login/tareas">Tareas</a>
+						<a class="btn btn-default btn-sm" href="/login/dashboard/configuracion_uf">UF</a>
+				</div>
+						
+			   						            	<div style="float:left"><a class="btn btn-default btn-sm" href="/login/dashboard/facturas">Facturas Kastor pendientes</a></div>
+			        	
+															<div style="float:left;margin-left:10px;"><a class="btn btn-default btn-sm" href="/login/dashboard/facturas_caleu3">Facturas Caleu pendientes</a></div>
+									    <div>
+					<div style="float:right;margin-top:6px;">
+						<label style="font-size: 14px;border-top-right-radius: 0px;border-bottom-right-radius: 0px" class="label label-default "></span>SOPORTE</label>
+						<label style="background-color: #b2babb  !important;font-size: 14px;margin-left:-5px;border-top-left-radius: 0px;border-bottom-left-radius: 0px" class="label">
+							<span class="glyphicon glyphicon-phone"></span> 02-2 833 8269 / 02-2 833 8307
+						</label>
+					</div>
+					
+					<div style="float:right;margin-top:6px;">
+											</div>
+				</div>
+			</div>
+			
+		</div>
+		<br>
+								
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css" integrity="sha256-a2tobsqlbgLsWs7ZVUGgP5IvWZsx8bTNQpzsqCSm5mk=" crossorigin="anonymous" />
+<script>
+
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
+let folios = [];
+let paymentType = null;
+let coms = [];
+const adm = "upselling - upselling.kastor.cl";
+function removeHash () { 
+history.pushState("", document.title, window.location.pathname
+                                                   + window.location.search);
+}
+$(function(){
+
+
+var formatter = new Intl.NumberFormat('en-US', {
+style: 'currency',
+currency: 'USD',
+minimumFractionDigits: 0,
+useGrouping: true
+});
+const arrayKhipu = {};
+let totalAPagarKhipu = 0;
+$(".addKhipu").click(function(){
+    const data = JSON.parse($(this).val());
+    if(!arrayKhipu[data.folionum]) {
+        arrayKhipu[data.folionum] = data;
+    } else {
+        delete arrayKhipu[data.folionum];
+    }
+    totalAPagarKhipu = 0;
+    coms = [];
+    folios = [];
+    for(var factura in arrayKhipu) {
+        const monto = formatter.format(arrayKhipu[factura].doctotal).replace(",",".");
+        coms.push(arrayKhipu[factura].cardname);
+        folios.push(`Factura: ${arrayKhipu[factura].docnum} - ${monto}`);
+        totalAPagarKhipu += +arrayKhipu[factura].doctotal;
+
+    }
+    if(totalAPagarKhipu > 0 ) {
+        $(".resumenKhipu").css("display","block");
+    } else {
+        $(".resumenKhipu").css("display","none");
+    }
+    $(".totalKhipu").html(formatter.format(totalAPagarKhipu).replace(",","."));
+    $(".selectPagoKhipu").trigger('change');
+});
+
+$(".selectPagoKhipu").change(function(){
+    $(".callPagoKhipu").attr('disabled','disabled');
+    if(totalAPagarKhipu < 1 ) return;
+    const type = $(this).val();
+    paymentType = type;
+    if(type != '') {
+        $(".callPagoKhipu").css('display','none');
+        $(".loadingKhipu").css('display','block');
+        const url = "https://20200413t104654-dot-kastor-api-khipu-dot-kastor-integraciones.appspot.com/api/v1/fee";
+        const dataPayment = {
+            amount: parseInt(totalAPagarKhipu),
+            type
+        };
+        const ajax = $.ajax(url, {
+        data : JSON.stringify(dataPayment),
+        contentType : 'application/json',
+        type : 'POST',
+        });
+
+        ajax.then(data => {
+            console.log(data);
+            try {
+                if(data && data.status && data.status.code === 200) {
+                    $(".totalKhipuComision").html(formatter.format(data.body - totalAPagarKhipu).replace(",","."));
+                    $(".totalKhipuFinal").html(formatter.format(data.body).replace(",","."));
+                    $(".loadingKhipu").css('display','none');
+                    $(".callPagoKhipu").css('display','block');
+                    if(data.body > 0) {
+                        $(".callPagoKhipu").removeAttr('disabled');
+                    }
+                } else {
+                    throw('error');
+                }
+            } catch {
+                alert('error al obtener el monto a pagar');
+            }
+        })
+    }
+    
+})
+
+
+  if (window.location.href.indexOf('#success') > 0) {
+    $("#dialog").attr('title','Procesando Pago Khipu');
+    $("#dialog").html("<div>El pago esta en proceso de confirmación se te notificara por correo cuando este validado.</div>");
+    $("#dialog").dialog({
+            modal: true,
+            width:"400px",
+            buttons:{
+            "send":{
+                text:'Aceptar',
+                "class":"colorNegro",
+                click: function() {
+                    $("#dialog").dialog('close');
+                }
+            },
+        }
+    });
+    removeHash();
+}
+
+$(".table").dataTable(
+    {
+        "bLengthChange": false,
+        "bPaginate": false,
+        "aaSorting": [],
+        "sort": []
+    });
+$(".btn-notificar").click(function(){
+    $(".text-notificar").val($(this).data('fecha'));
+});
+$(".enviar-mensaje").click(function(){
+    var url = "/login/dashboard/mensaje_facturacion/"+$("#textarea").val();
+    $.ajax(url);
+    $("#textarea").val("");
+    $(".cancel-modal").trigger('click');
+    $("#dialog").attr('title','Mensaje enviado exitosamente');
+    $("#dialog").html("<div>Un ejecutivo se contactará con usted a la brevedad.</div>");
+    $("#dialog").dialog({
+    modal: true,
+    width:"400px",
+    buttons:{
+    "send":{
+          text:'Aceptar',
+          "class":"colorNegro",
+          click: function() {
+            $("#dialog").dialog('close');
+        }
+    },
+}
+    });
+});
+
+$('.mostrar-pac').click(function()
+{
+    $("#dialog").attr('title','Contrato PAC');
+    $("#dialog").html("<div>Se ha notificado a nuestros ejecutivos comerciales sobre la suscripción al contrato PAC, además se han descargado los contratos para su revisión.</div>");
+            
+
+    $("#dialog").dialog({
+    modal: true,
+    width:"400px",
+    buttons:{
+    "send":{
+          text:'Aceptar',
+          "class":"colorNegro",
+          click: function() {
+            $("#dialog").dialog('close');
+        }
+        },
+    }
+        });
+});
+
+//$(document).on("click", ".callPagoKhipu", function() {  
+$(".callPagoKhipu").click(function(){
+    const url = "https://20200413t104654-dot-kastor-api-khipu-dot-kastor-integraciones.appspot.com/api/v1/payments";
+    const dataPayment = {
+        subject: "Pago Facturas "+adm,
+        amount: parseInt(totalAPagarKhipu),
+        transaction_id: uuidv4(),
+        type: "CALEU",
+        data: { comunidades: coms.join(", "), administracion: adm, folionum: folios.join(", "), doctotal: totalAPagarKhipu},
+        cancel_url: window.location.href,
+        return_url: window.location.href + "#success",
+        paymentType: paymentType
+    };
+    const ajax = $.ajax(url, {
+    data : JSON.stringify(dataPayment),
+    contentType : 'application/json',
+    type : 'POST',
+    });
+
+    ajax.then(data => {
+        try {
+            if(data && data.status && data.status.code === 200) {
+                window.location.href = data.body.khipu.payment_url;
+            } else {
+                throw('error');
+            }
+        } catch {
+            alert('error al crear el pago');
+        }
+    })
+});
+});	
+</script>
+<style>
+.fa-spin-custom, .glyphicon-spin {
+-webkit-animation: spin 1000ms infinite linear;
+animation: spin 1000ms infinite linear;
+}
+@-webkit-keyframes spin {
+0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+}
+}
+@keyframes spin {
+0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+}
+}
+
+.resumenKhipu td {
+padding:3px;
+}
+/* Customize the label (the container) */
+.container-chekbox {
+display: block;
+position: relative;
+float:right;
+padding-left: 35px;
+margin-bottom: 12px;
+cursor: pointer;
+font-size: 22px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container-chekbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 25px;
+width: 25px;
+background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container-chekbox:hover input ~ .checkmark {
+background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container-chekbox input:checked ~ .checkmark {
+background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+/* Show the checkmark when checked */
+.container-chekbox input:checked ~ .checkmark:after {
+display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-chekbox .checkmark:after {
+left: 9px;
+top: 5px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+} 
+</style>
+<div class="row">
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        <strong>Facturación DISTRIBUIDORA CALEU  / </strong>
+            <div class="panel-actions">
+
+                <a href="/login/" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-arrow-left"></span> Volver
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+        
+                        <table class='table table-striped table-bordered table-hover table-condensed'>
+                    <thead>
+                        <tr>
+                                <td width='5%'>&nbsp;</td>
+                                <td width='25%'><strong>Rut</strong></td>
+                                <td width='55%'><strong>Comunidad</strong></td>
+                                <td width='15%'>&nbsp;</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                        </tbody>
+                </table>
+        </div>
+    </div>
+</div>
+</div>
+
+				</div>
+			</div>
+						</div>
+	</div>
+	<div id="dialog" title="Basic dialog" style="display:none;">
+	</div>
+
+	
+</body>
+</html>

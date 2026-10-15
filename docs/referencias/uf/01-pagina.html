@@ -1,0 +1,1424 @@
+<!-- origen: https://upselling.kastor.cl/login/dashboard/configuracion_uf | Administración - upselling -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>
+				Administración - upselling			</title>
+	<link rel="shortcut icon" href="https://repositorio.kastor.cl/edificio_hotfix/img/icono.ico">
+	<script type="text/javascript" src="/login/js/jquery-1.11.1.min.js"></script><script type="text/javascript" src="/login/js/bootstrap.js"></script><script type="text/javascript" src="/login/js/dataTables.min.js"></script><script type="text/javascript" src="/login/js/jquery-ui.js"></script><script type="text/javascript" src="/login/js/dataTables.bootstrap.js"></script><link rel="stylesheet" type="text/css" href="/login/css/bootstrap.css"/><link rel="stylesheet" type="text/css" href="/login/css/bootstrap-theme.css"/><link rel="stylesheet" type="text/css" href="/login/css/dataTables.min.css"/><link rel="stylesheet" type="text/css" href="/login/css/jquery-ui.css"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script>
+	$(function(){
+
+		$(".datepicker").datepicker({dateFormat:'dd-mm-yy'});
+		$(".tabla-herramientas > a").addClass('mostrar-tooltip');
+		$(document).find(".mostrar-tooltip").tooltip({
+				position: {
+					my: "center bottom-15",
+					at: "center top",
+					using: function( position, feedback ) {
+						$( this ).css( position );
+						$( "<div>" )
+						.addClass( "arrow bottom" )
+						.addClass( feedback.vertical )
+						.addClass( feedback.horizontal )
+						.appendTo( this );
+					}
+				}
+			});
+		$(document).find(".mostrar-tooltip2").tooltip({
+				position: {
+					my: "center bottom-15",
+					at: "center arrow top",
+					using: function( position, feedback ) {
+						$( this ).css( position );
+						$( "<div>" )
+						.addClass( "arrow bottom" )
+						.addClass( feedback.vertical )
+						.addClass( feedback.horizontal )
+						.appendTo( this );
+					}
+				}
+			});
+		});
+</script>
+<style>
+
+	.container-general{
+		margin-bottom: 100px;
+		box-shadow: 0 0 5px #888;
+		background: white;
+		height: 100%;
+		width:1200px;
+		-moz-box-shadow: 0 0 5px #888;
+		-webkit-box-shadow: 0 0 5px #888;
+	}
+
+	/* CUSTOM CSS */
+
+	.colorNegro{
+		color:black !important;
+		text-shadow: none !important;
+	}
+
+	.colorBlanco{
+		color:white !important;
+		text-shadow: none !important;
+	}
+
+
+	#bg {
+		min-height: 100%;
+		min-width: 1024px;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+
+
+	body {
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-attachment:fixed;
+		transition: background 0.5s linear;
+		-moz-transition: background 0.5s linear; /* Firefox 4 */
+		-webkit-transition: background 0.5s linear; /* Safari and Chrome */
+		-o-transition: background 0.5s linear; /* Opera */
+		-ms-transition: background 0.5s linear; /* Explorer 10 */
+		font-family: 'Calibri', 'Open Sans', sans-serif !important;
+
+
+
+	}
+	
+	html {
+		height: 100%
+	}
+
+</style>
+
+</head>
+<body class="">
+
+
+<!--<div id="contenedor_imagen_aviso" style='margin: 0 auto !important; text-align: center;width:100%; ' >
+	<img src='http://assets.kastor.cl/informativas/20220113_AVISO3.png' width='25%' style="position: absolute;margin-left: 16%;margin-top: 0%;">
+</div>-->
+	<div class="container container-general" style="">
+						<div class="row" >
+				<div class="col-md-12">
+				<style>
+@media screen and (min-width:768px){
+    .navbar-brand-centered {
+        position: absolute;
+        left: 35.5%;
+        display: block;
+        width: 320px;
+        text-align: center;
+        background-color: #eee;
+    }
+    .navbar>.container .navbar-brand-centered, 
+    .navbar>.container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+    }
+}
+</style>
+<script>
+$(function(){
+	
+});
+</script>
+
+<br>      <nav class="navbar navbar-default" role="navigation">
+    	  <div class="col-md-12">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <div class="navbar-brand" style="margin-top:-6px"><a href="/login/"><img src="https://assets.kastor.cl/images/logo-kastor.png" style="width:100px;"></a></div>
+		       <div class="navbar-brand navbar-brand-centered">upselling</div>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="navbar-brand">
+					
+		      <ul class="nav navbar-nav navbar-right">
+			   	<!--<li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 18px;"><b>Herramientas</b> <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			          	<li><a href="/login/tareas">Tareas</a></li>
+			   						            <li><a href="/login/usuarios">Usuarios</a></li>
+			            <li><a href="/login/perfiles">Perfiles</a></li>
+			            				            		<li><a href="/login/dashboard/sca">Sistema Cobranza</a></li>
+			        					        				          </ul>
+			    </li>-->
+			    <li>
+			    	<a href="javascript:void(0)"><b>hector.barrera@kastor.cl</b> <i class="glyphicon glyphicon-cog"></i></a>
+			    </li>
+		        <li><a href="/login/dashboard/salir"><i class="glyphicon glyphicon-log-out"></i></a></li>		        
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+				<div class="row" style="margin-top:10px;margin-bottom: -7px;">
+			<div class="col-md-12">
+				<div style="width:420px;float:left;">
+			   						            <a class="btn btn-warning btn-sm" href="/login/usuarios">Usuarios</a>
+			           					            	<a class="btn btn-default btn-sm" href="/login/dashboard/sca">Sistema Cobranza </a>
+			        					            	<a class="btn btn-default btn-sm" href="/login/perfiles">Perfiles</a>
+
+			        							<a class="btn btn-default btn-sm" href="/login/tareas">Tareas</a>
+						<a class="btn btn-default btn-sm" href="/login/dashboard/configuracion_uf">UF</a>
+				</div>
+						
+			   						            	<div style="float:left"><a class="btn btn-default btn-sm" href="/login/dashboard/facturas">Facturas Kastor pendientes</a></div>
+			        	
+															<div style="float:left;margin-left:10px;"><a class="btn btn-default btn-sm" href="/login/dashboard/facturas_caleu3">Facturas Caleu pendientes</a></div>
+									    <div>
+					<div style="float:right;margin-top:6px;">
+						<label style="font-size: 14px;border-top-right-radius: 0px;border-bottom-right-radius: 0px" class="label label-default "></span>SOPORTE</label>
+						<label style="background-color: #b2babb  !important;font-size: 14px;margin-left:-5px;border-top-left-radius: 0px;border-bottom-left-radius: 0px" class="label">
+							<span class="glyphicon glyphicon-phone"></span> 02-2 833 8269 / 02-2 833 8307
+						</label>
+					</div>
+					
+					<div style="float:right;margin-top:6px;">
+											</div>
+				</div>
+			</div>
+			
+		</div>
+		<br>
+								
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading clearfix">
+				
+				<strong style="line-height: 30px;">
+					Configuración UF
+				</strong>
+					<button
+						type="button"
+						class="btn btn-link"
+						onclick="abrirModalBienvenidaUf()"
+						title="Ver información"
+						style="padding: 0; margin-left: 6px; line-height: 30px; text-decoration: none;"
+					>
+						<span class="glyphicon glyphicon-info-sign icono-info-uf"></span>
+					</button>
+
+
+				<a href="/login/"
+				class="btn btn-default btn-sm pull-right"
+				style="margin-top: -2px;">
+					<span class="glyphicon glyphicon-arrow-left"></span> Volver
+				</a>
+			</div>
+
+			<div class="panel-body">
+				<!-- BANNER INFORMATIVO -->
+
+				<div class="alert alert-info">
+
+					<i class="fa-solid fa-circle-info"></i>
+					El valor UF ingresado en esta sección será utilizado en todas las comunidades que trabajen con presupuesto en UF
+					para calcular la variación de cobranza en el reporte <strong>Control Presupuestario</strong> según el período correspondiente.
+					<strong>Este valor no se relaciona con el cálculo de Remuneraciones.</strong>
+
+				</div>
+
+				
+				<!-- PANEL DE CONTROL -->
+				<div class="well well-sm">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-inline">
+								<div class="form-group">
+									<label for="yearSelect" class="control-label" style="margin-right: 10px;">
+										Seleccionar Período:
+									</label>
+										<select id="yearSelect" class="form-control input-sm" onchange="cambiarAnioUf()">
+																								<option value="2028" >
+														Año 2028													</option>
+																									<option value="2027" >
+														Año 2027													</option>
+																									<option value="2026" selected>
+														Año 2026													</option>
+																									<option value="2025" >
+														Año 2025													</option>
+																						</select>
+
+										<span
+											class="glyphicon glyphicon-info-sign icono-info-uf"
+											data-toggle="tooltip"
+											data-placement="top"
+											title="El sistema utilizará el valor UF del período correspondiente al consultar el reporte Control Presupuestario."
+										></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-4">
+							<span class="text-muted small" id="lastEditDisplay"
+								style="margin-right: 15px; vertical-align: middle;">
+								Última edición: 04/09/2026 20:41							</span>
+						</div>
+
+						<div class="col-md-4 text-right">
+
+							<button id="btnConfigClave" onclick="abrirModalConfigClave()" class="btn btn-default btn-sm" style="margin-right: 6px;">
+								<i class="fa-solid fa-key"></i>
+								<span>Crear contraseña</span>
+							</button>
+
+							<button id="btnAction" onclick="handleAction()" class="btn btn-warning btn-sm">
+								<i id="btnIcon" class="fa-solid fa-pen-to-square"></i>
+								<span id="btnText">Editar montos en UF</span>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div id="monthsGrid" class="row">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- MODAL DE AUTORIZACIÓN -->
+<div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="authModalLabel">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="authModalLabel">Autorización</h4>
+			</div>
+
+			<div class="modal-body">
+				<p class="text-muted small">Ingrese su contraseña maestra para habilitar la edición.</p>
+
+				<div class="form-group" id="keyGroup">
+					<label class="control-label">Contraseña maestra</label>
+					<input type="password" id="keyInput" class="form-control" placeholder="****">
+
+					<span id="errorMsg" class="help-block hidden text-danger" style="margin-top: 5px;">
+						<i class="fa-solid fa-triangle-exclamation"></i> Contraseña incorrecta.
+					</span>
+				</div>
+
+				<button onclick="verifyKey()" class="btn btn-warning btn-block">
+					Verificar y desbloquear
+				</button>
+
+				<div id="recuperarClaveUfBox" class="text-center" style="margin-top: 12px;">
+					<button type="button" onclick="recuperarClaveUf()" class="btn btn-link btn-sm" style="padding: 0;">
+						<i class="fa-solid fa-envelope"></i>
+						Olvidé mi contraseña maestra
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- MODAL CONTRASEÑA -->
+<div class="modal fade" id="configClaveModal" tabindex="-1" role="dialog" aria-labelledby="configClaveModalLabel">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="configClaveModalLabel">Configurar contraseña maestra</h4>
+			</div>
+
+			<div class="modal-body">
+				<p class="text-muted small" id="configClaveDescripcion">
+					Ingrese una nueva contraseña maestra para habilitar la edición de UF.
+				</p>
+
+				<div id="configClaveInfoMsg" class="alert alert-info hidden" style="padding: 8px 10px; margin-bottom: 12px;">
+					<i class="fa-solid fa-circle-info"></i>
+					Para modificar la contraseña maestra, ingrese primero la contraseña actual.
+				</div>
+
+				<div class="form-group hidden" id="currentKeyGroup">
+					<label class="control-label">Contraseña actual</label>
+					<input type="password" id="currentKeyInput" class="form-control" placeholder="Contraseña actual">
+
+					<span id="errorCurrentKeyMsg" class="help-block hidden text-danger" style="margin-top: 5px;">
+						<i class="fa-solid fa-triangle-exclamation"></i> Contraseña actual incorrecta.
+					</span>
+				</div>
+
+				<div class="form-group" id="newKeyGroup">
+					<label class="control-label">Nueva contraseña</label>
+					<input type="password" id="newKeyInput" class="form-control" placeholder="Nueva contraseña">
+				</div>
+
+				<div class="form-group" id="repeatKeyGroup">
+					<label class="control-label">Repetir nueva contraseña</label>
+					<input type="password" id="repeatKeyInput" class="form-control" placeholder="Repetir nueva contraseña">
+
+					<span id="errorConfigKeyMsg" class="help-block hidden text-danger" style="margin-top: 5px;">
+						<i class="fa-solid fa-triangle-exclamation"></i> Las contraseñas no coinciden.
+					</span>
+				</div>
+
+				<button type="button" onclick="guardarClaveMaestra()" class="btn btn-warning btn-block">
+					<i class="fa-solid fa-floppy-disk"></i>
+					Guardar contraseña
+				</button>
+
+				<!-- <div id="recuperarClaveUfBox" class="text-center hidden" style="margin-top: 12px;">
+					<button type="button" onclick="recuperarClaveUf()" class="btn btn-link btn-sm" style="padding: 0;">
+						<i class="fa-solid fa-envelope"></i>
+						Olvidé mi clave maestra
+					</button>
+				</div> -->
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- MODAL RECUPERAR CLAVE UF -->
+<div class="modal fade" id="recuperarClaveUfModal" tabindex="-1" role="dialog" aria-labelledby="recuperarClaveUfModalLabel">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="recuperarClaveUfModalLabel">
+					Recuperar contraseña UF
+				</h4>
+			</div>
+
+
+			<div class="modal-body">
+				<p class="text-muted small" id="recuperarClaveUfDescripcion">
+					Se generará una nueva contraseña temporal para la configuración UF.
+				</p>
+		
+				<div class="alert alert-info" style="padding: 8px 10px;">
+					<i class="fa-solid fa-envelope"></i>
+					La contraseña será enviada al correo:
+					<br>
+					<strong id="correoRecuperacionUfText"></strong>
+				</div>
+
+				<div id="recuperarClaveUfError" class="alert alert-danger hidden" style="padding: 8px 10px;">
+					<i class="fa-solid fa-triangle-exclamation"></i>
+					<span id="recuperarClaveUfErrorText"></span>
+				</div>
+
+				<button type="button" id="btnConfirmarRecuperarClaveUf" onclick="confirmarRecuperarClaveUf()" class="btn btn-warning btn-block">
+					<i class="fa-solid fa-paper-plane"></i>
+					Enviar contraseña temporal
+				</button>
+
+				<button type="button" class="btn btn-default btn-block" data-dismiss="modal">
+					Cancelar
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- MODAL BIENVENIDA CONFIGURACIÓN UF -->
+<div class="modal fade" id="bienvenidaUfModal" tabindex="-1" role="dialog" aria-labelledby="bienvenidaUfModalLabel">
+	<div class="modal-dialog bienvenida-uf-dialog" role="document">
+		<div class="modal-content bienvenida-uf-content">
+
+			<div class="modal-header bienvenida-uf-header">
+				<h4 class="modal-title bienvenida-uf-title" id="bienvenidaUfModalLabel">
+					Bienvenido al configurador de UF
+				</h4>
+			</div>
+
+			<div class="modal-body bienvenida-uf-body">
+
+				<div class="bienvenida-uf-item">
+					<div class="bienvenida-uf-numero">1</div>
+					<div class="bienvenida-uf-texto">
+						Esta sección está diseñada para administradores que trabajan con presupuestos en UF.
+					</div>
+				</div>
+
+				<div class="bienvenida-uf-item">
+					<div class="bienvenida-uf-numero">2</div>
+					<div class="bienvenida-uf-texto">
+						Desde aquí puede registrar un valor UF por período y centralizarlo para todas sus comunidades. Este valor será utilizado por Kastor para generar el 
+						<strong>reporte de control presupuestario en UF.</strong>
+					</div>
+				</div>
+
+				<div class="bienvenida-uf-item">
+					<div class="bienvenida-uf-numero">3</div>
+					<div class="bienvenida-uf-texto">
+						Solo los usuarios con perfil <strong>ADMIN</strong>
+						pueden ingresar o modificar valores. Para hacerlo, primero deben crear una contraseña desde el botón 
+						<strong>Crear contraseña</strong>
+					</div>
+				</div>
+
+				<button type="button" class="btn btn-warning btn-block bienvenida-uf-btn" data-dismiss="modal">
+					Continuar
+				</button>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- MODAL MENSAJE UF -->
+<div class="modal fade" id="mensajeUfModal" tabindex="-1" role="dialog" aria-labelledby="mensajeUfModalLabel">
+	<div class="modal-dialog bienvenida-uf-dialog" role="document">
+		<div class="modal-content bienvenida-uf-content">
+
+			<div class="modal-header bienvenida-uf-header">
+				<h4 class="modal-title bienvenida-uf-title" id="mensajeUfModalLabel">
+					Mensaje
+				</h4>
+			</div>
+
+			<div class="modal-body bienvenida-uf-body">
+
+				<div class="mensaje-uf-contenedor">
+					<div id="mensajeUfTexto" class="mensaje-uf-texto">
+					</div>
+				</div>
+
+				<div class="mensaje-uf-acciones">
+
+					<button
+						type="button"
+						id="mensajeUfBtnAceptar"
+						class="btn btn-warning btn-sm mensaje-uf-btn"
+						data-dismiss="modal"
+					>
+						Aceptar
+					</button>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	let isEditing = false;
+	let tieneClaveUfConfigurada = false;
+	const correoUsuarioUf = "hector.barrera@kastor.cl";
+	const esPerfilAdminUf = true;
+	const anioActual = 2026;
+	const valoresUfEndpoint = {"2026-01":"1","2026-09":"60000","2026-10":"70000"};
+
+	const meses = [
+		{ nombre: 'Enero', numero: '01' },
+		{ nombre: 'Febrero', numero: '02' },
+		{ nombre: 'Marzo', numero: '03' },
+		{ nombre: 'Abril', numero: '04' },
+		{ nombre: 'Mayo', numero: '05' },
+		{ nombre: 'Junio', numero: '06' },
+		{ nombre: 'Julio', numero: '07' },
+		{ nombre: 'Agosto', numero: '08' },
+		{ nombre: 'Septiembre', numero: '09' },
+		{ nombre: 'Octubre', numero: '10' },
+		{ nombre: 'Noviembre', numero: '11' },
+		{ nombre: 'Diciembre', numero: '12' }
+	];
+
+	const valores = {};
+
+	meses.forEach(function (item) {
+		const periodo = anioActual + '-' + item.numero;
+		const valor = valoresUfEndpoint[periodo] !== undefined ? valoresUfEndpoint[periodo] : 0;
+
+		valores[item.nombre] = parseFloat(valor) || 0;
+	});
+
+	function cambiarAnioUf() {
+		const anio = document.getElementById('yearSelect').value;
+
+		window.location.href = '/login/dashboard/configuracion_uf?anio=' + anio;
+	}
+
+	function formatearMontoUf(valor) {
+		valor = parseFloat(valor) || 0;
+
+		return valor.toFixed(2).replace('.', ',');
+	}
+
+	function limpiarNumeroUf(valor) {
+		valor = String(valor || '');
+
+		valor = valor.replace(/\./g, '');
+		valor = valor.replace(',', '.');
+		valor = valor.replace(/[^0-9.]/g, '');
+
+		return parseFloat(valor) || 0;
+	}
+
+	function valorParaEditarUf(valor) {
+		valor = parseFloat(valor) || 0;
+
+		return String(valor).replace('.', ',');
+	}
+
+	function prepararInputUf(input) {
+		let numero = limpiarNumeroUf(input.value);
+
+		input.value = String(numero).replace('.', ',');
+		input.select();
+	}
+
+	function actualizarValorTemporalUf(input, mes) {
+		let valor = String(input.value || '');
+
+		valor = valor.replace(/[^0-9,]/g, '');
+
+		let partes = valor.split(',');
+		if (partes.length > 2) {
+			valor = partes[0] + ',' + partes.slice(1).join('');
+		}
+
+		input.value = valor;
+		valores[mes] = limpiarNumeroUf(valor);
+	}
+
+	function formatearInputUf(input, mes) {
+		let numero = limpiarNumeroUf(input.value);
+
+		valores[mes] = numero;
+		input.value = formatearMontoUf(numero);
+	}
+
+	function renderGrid() {
+		const grid = document.getElementById('monthsGrid');
+		grid.innerHTML = '';
+
+		meses.forEach(function (item) {
+			const mes = item.nombre;
+			const val = valores[mes] || 0;
+			const isEmpty = val === 0;
+
+			const html = `
+				<div class="col-md-3 col-sm-6">
+					<div class="panel panel-default" style="margin-bottom: 20px; transition: all 0.3s;">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-8">
+									<strong>${mes}</strong>
+
+									<span
+										class="glyphicon glyphicon-info-sign icono-info-uf"
+										data-toggle="tooltip"
+										data-placement="top"
+										title="El sistema utilizará el valor UF del período correspondiente al consultar el reporte Control Presupuestario."
+									></span>
+								</div>
+
+								<div class="col-xs-4 text-right">
+									${isEmpty ? '<i class="fa-solid fa-circle-info text-info" title="Sin registro"></i>' : ''}
+								</div>
+							</div>
+						</div>
+
+						<div class="panel-body">
+							<div class="input-group">
+								<span class="input-group-addon">$</span>
+								<input
+									type="text"
+									class="form-control text-right"
+									${!isEditing ? 'disabled' : ''}
+									value="${isEditing ? valorParaEditarUf(val) : formatearMontoUf(val)}"
+									oninput="actualizarValorTemporalUf(this, '${mes}')"
+									onblur="formatearInputUf(this, '${mes}')"
+									onfocus="prepararInputUf(this)"
+									style="${isEditing ? 'border-color: #f0ad4e; background-color: #fffaf0;' : ''}"
+								>
+							</div>
+						</div>
+					</div>
+				</div>`;
+
+			grid.insertAdjacentHTML('beforeend', html);
+		});
+	}
+
+	function obtenerValoresUfParaGuardar() {
+		const payload = [];
+
+		meses.forEach(function (item) {
+			const periodo = anioActual + '-' + item.numero;
+			const monto = valores[item.nombre] || 0;
+
+			if (monto > 0) {
+				payload.push({
+					periodo: periodo,
+					monto: monto
+				});
+			}
+		});
+
+		return payload;
+	}
+
+	function guardarValoresUf() {
+		const payload = obtenerValoresUfParaGuardar();
+
+		if (!payload.length) {
+
+			mostrarModalMensajeUf(
+				'Sin valores UF',
+				'No hay valores UF para guardar.',
+				'warning'
+			);
+			return;
+
+		}
+
+		const btn = document.getElementById('btnAction');
+		const text = document.getElementById('btnText');
+
+		btn.disabled = true;
+		text.innerText = 'Guardando...';
+
+		let errores = [];
+
+		function guardarSiguiente(index) {
+			if (index >= payload.length) {
+				btn.disabled = false;
+
+				if (errores.length > 0) {
+					text.innerText = 'Guardar montos en UF';
+
+					mostrarModalMensajeUf(
+						'Error al guardar',
+						'Algunos valores no se pudieron guardar:\n' + errores.join('\n'),
+						'error'
+					);
+
+					return;
+				}
+
+				isEditing = false;
+				updateUI(false);
+				renderGrid();
+
+				mostrarModalMensajeUf(
+
+					'Valores guardados',
+					'Valores UF guardados correctamente.',
+					'success',
+					function () {
+						window.location.href = '/login/dashboard/configuracion_uf?anio=' + anioActual;
+					}
+
+				);
+				return;
+			}
+
+			const item = payload[index];
+
+			$.ajax({
+				url: '/login/dashboard/guardar_configuracion_uf',
+				type: 'POST',
+				dataType: 'json',
+				data: {
+					periodo: item.periodo,
+					monto: item.monto
+				},
+				success: function (response) {
+					if (!response || response.success === false) {
+						errores.push(
+							item.periodo + ': ' +
+							(response && response.message ? response.message : 'Error desconocido')
+						);
+					}
+
+					guardarSiguiente(index + 1);
+				},
+				error: function () {
+					errores.push(item.periodo + ': Error de conexión');
+					guardarSiguiente(index + 1);
+				}
+			});
+		}
+
+		guardarSiguiente(0);
+	}
+
+	function respuestaTieneClaveUf(response) {
+		if (
+			response &&
+			response.success === true &&
+			response.data &&
+			(
+				response.data.exists === true ||
+				response.data.exists === 1 ||
+				response.data.exists === '1' ||
+				response.data.exists === 'true'
+			)
+		) {
+			return true;
+		}
+
+		return false;
+	}
+
+	function respuestaClaveValidaUf(response) {
+		if (
+			response &&
+			response.data &&
+			(
+				response.data.valid === true ||
+				response.data.valid === 1 ||
+				response.data.valid === '1' ||
+				response.data.valid === 'true'
+			)
+		) {
+			return true;
+		}
+
+		return false;
+	}
+
+	function consultarEstadoClaveUf(callback) {
+		$.ajax({
+			url: '/login/dashboard/existe_clave_uf',
+			type: 'POST',
+			dataType: 'json',
+			success: function (response) {
+
+				tieneClaveUfConfigurada = respuestaTieneClaveUf(response);
+
+				actualizarEstadoBotonEditarUf();
+
+				if (typeof callback === 'function') {
+					callback(tieneClaveUfConfigurada, response);
+				}
+			},
+			error: function () {
+				tieneClaveUfConfigurada = false;
+
+				actualizarEstadoBotonEditarUf();
+
+				if (typeof callback === 'function') {
+					callback(false, null);
+				}
+			}
+		});
+	}
+
+	function actualizarEstadoBotonEditarUf() {
+		const btn = document.getElementById('btnAction');
+		const text = document.getElementById('btnText');
+		const icon = document.getElementById('btnIcon');
+
+		if (!btn || !text || !icon) {
+			return;
+		}
+
+		if (!tieneClaveUfConfigurada) {
+			btn.disabled = true;
+			btn.className = "btn btn-warning btn-sm disabled";
+			btn.title = "Por seguridad solo usuarios con perfil ADMIN pueden ingresar valores. Para continuar cree una contraseña.";
+			text.innerText = "Editar montos en UF";
+			icon.className = "fa-solid fa-pen-to-square";
+			return;
+		}
+
+		btn.disabled = false;
+		btn.className = "btn btn-warning btn-sm";
+		btn.title = "";
+		text.innerText = "Editar montos en UF";
+		icon.className = "fa-solid fa-pen-to-square";
+	}
+
+	function validarEstadoClaveUf() {
+		consultarEstadoClaveUf();
+	}
+
+	function handleAction() {
+
+		if (!tieneClaveUfConfigurada && !isEditing) {
+			abrirModalConfigClave();
+			return;
+		}
+		if (isEditing) {
+			guardarValoresUf();
+		} else {
+			limpiarModalAuthUf();
+			$('#authModal').modal('show');
+		}
+
+	}
+
+	function verifyKey() {
+		const input = document.getElementById('keyInput');
+		const error = document.getElementById('errorMsg');
+		const group = document.getElementById('keyGroup');
+
+		const clave = input.value;
+
+		error.classList.add('hidden');
+		group.classList.remove('has-error');
+
+		if (!clave) {
+			error.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Debe ingresar la contraseña.';
+			error.classList.remove('hidden');
+			group.classList.add('has-error');
+			input.focus();
+			return;
+		}
+
+		$.ajax({
+			url: '/login/dashboard/verificar_clave_uf',
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				clave: clave
+			},
+			success: function (response) {
+
+				if (!respuestaClaveValidaUf(response)) {
+					isEditing = false;
+
+					error.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Contraseña incorrecta.';
+					error.classList.remove('hidden');
+					group.classList.add('has-error');
+					input.focus();
+
+					updateUI(false);
+					renderGrid();
+
+					return;
+				}
+
+				isEditing = true;
+
+				input.value = '';
+				error.classList.add('hidden');
+				group.classList.remove('has-error');
+
+				$('#authModal').modal('hide');
+
+				updateUI(true);
+				renderGrid();
+			},
+			error: function () {
+				isEditing = false;
+
+				error.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Error al verificar la contraseña.';
+				error.classList.remove('hidden');
+				group.classList.add('has-error');
+				input.focus();
+
+				updateUI(false);
+				renderGrid();
+			}
+		});
+	}
+
+	function updateUI(editing) {
+		const btn = document.getElementById('btnAction');
+		const text = document.getElementById('btnText');
+		const icon = document.getElementById('btnIcon');
+
+		if (!btn || !text || !icon) {
+			return;
+		}
+
+		if (editing) {
+			btn.disabled = false;
+			btn.className = "btn btn-success btn-sm";
+			text.innerText = "Guardar montos en UF";
+			icon.className = "fa-solid fa-floppy-disk";
+			btn.title = "";
+		} else {
+			actualizarEstadoBotonEditarUf();
+		}
+	}
+
+	function abrirModalConfigClave() {
+		// document.getElementById('recuperarClaveUfBox').classList.add('hidden');
+		document.getElementById('currentKeyInput').value = '';
+		document.getElementById('newKeyInput').value = '';
+		document.getElementById('repeatKeyInput').value = '';
+
+		document.getElementById('errorCurrentKeyMsg').classList.add('hidden');
+		document.getElementById('errorConfigKeyMsg').classList.add('hidden');
+
+		document.getElementById('currentKeyGroup').classList.remove('has-error');
+		document.getElementById('newKeyGroup').classList.remove('has-error');
+		document.getElementById('repeatKeyGroup').classList.remove('has-error');
+
+		document.getElementById('configClaveInfoMsg').classList.add('hidden');
+		document.getElementById('currentKeyGroup').classList.add('hidden');
+
+		document.getElementById('configClaveDescripcion').innerText =
+			'Consultando configuración de contraseña maestra...';
+
+		$('#configClaveModal').modal('show');
+
+		consultarEstadoClaveUf(function (existeClave) {
+			if (existeClave) {
+
+				document.getElementById('configClaveDescripcion').innerText =
+					'Esta administración ya tiene una contraseña maestra configurada.';
+				document.getElementById('configClaveInfoMsg').innerHTML =
+					'<i class="fa-solid fa-circle-info"></i> Para modificar la contraseña maestra, ingrese primero la contraseña actual.';
+				document.getElementById('currentKeyGroup').classList.remove('hidden');
+				document.getElementById('configClaveInfoMsg').classList.remove('hidden');
+				// document.getElementById('recuperarClaveUfBox').classList.remove('hidden');
+				return;
+
+			}
+
+			document.getElementById('configClaveDescripcion').innerText =
+				'No existe contraseña maestra configurada.';
+
+			document.getElementById('configClaveInfoMsg').innerHTML =
+				'<i class="fa-solid fa-circle-info"></i> Cree una contraseña maestra para poder habilitar la edición de UF.';
+
+			document.getElementById('currentKeyGroup').classList.add('hidden');
+			document.getElementById('configClaveInfoMsg').classList.remove('hidden');
+		});
+	}
+
+	function guardarClaveMaestra() {
+		const claveActual = document.getElementById('currentKeyInput').value;
+		const nuevaClave = document.getElementById('newKeyInput').value;
+		const repetirClave = document.getElementById('repeatKeyInput').value;
+
+		const errorActual = document.getElementById('errorCurrentKeyMsg');
+		const errorNueva = document.getElementById('errorConfigKeyMsg');
+
+		document.getElementById('currentKeyGroup').classList.remove('has-error');
+		document.getElementById('newKeyGroup').classList.remove('has-error');
+		document.getElementById('repeatKeyGroup').classList.remove('has-error');
+
+		errorActual.classList.add('hidden');
+		errorNueva.classList.add('hidden');
+
+		if (tieneClaveUfConfigurada && !claveActual) {
+			errorActual.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Debe ingresar la contraseña actual.';
+			errorActual.classList.remove('hidden');
+			document.getElementById('currentKeyGroup').classList.add('has-error');
+			document.getElementById('currentKeyInput').focus();
+			return;
+		}
+
+		if (!nuevaClave || !repetirClave) {
+			errorNueva.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Debe ingresar y repetir la nueva contraseña.';
+			errorNueva.classList.remove('hidden');
+			document.getElementById('newKeyGroup').classList.add('has-error');
+			document.getElementById('repeatKeyGroup').classList.add('has-error');
+			return;
+		}
+
+		if (nuevaClave !== repetirClave) {
+			errorNueva.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Las contraseñas no coinciden.';
+			errorNueva.classList.remove('hidden');
+			document.getElementById('newKeyGroup').classList.add('has-error');
+			document.getElementById('repeatKeyGroup').classList.add('has-error');
+			return;
+		}
+
+		if (tieneClaveUfConfigurada) {
+			verificarClaveActualParaGuardar(claveActual, nuevaClave);
+			return;
+		}
+
+		enviarNuevaClaveUf(nuevaClave);
+	}
+
+	function verificarClaveActualParaGuardar(claveActual, nuevaClave) {
+		const errorActual = document.getElementById('errorCurrentKeyMsg');
+
+		$.ajax({
+			url: '/login/dashboard/verificar_clave_uf',
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				clave: claveActual
+			},
+			success: function (response) {
+				if (!respuestaClaveValidaUf(response)) {
+					errorActual.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Contraseña actual incorrecta.';
+					errorActual.classList.remove('hidden');
+					document.getElementById('currentKeyGroup').classList.add('has-error');
+					document.getElementById('currentKeyInput').focus();
+					return;
+				}
+
+				enviarNuevaClaveUf(nuevaClave);
+			},
+			error: function () {
+				errorActual.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> No se pudo verificar la contraseña actual.';
+				errorActual.classList.remove('hidden');
+				document.getElementById('currentKeyGroup').classList.add('has-error');
+				document.getElementById('currentKeyInput').focus();
+			}
+		});
+	}
+
+	function enviarNuevaClaveUf(nuevaClave) {
+		$.ajax({
+			url: '/login/dashboard/guardar_clave_uf',
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				clave: nuevaClave
+			},
+			success: function (response) {
+				if (!response || response.success === false) {
+					mostrarModalMensajeUf(
+						'No se pudo guardar',
+						response && response.message ? response.message : 'No se pudo guardar la contraseña.',
+						'error'
+					);
+					return;
+				}
+
+				tieneClaveUfConfigurada = true;
+				actualizarEstadoBotonEditarUf();
+
+				document.getElementById('currentKeyInput').value = '';
+				document.getElementById('newKeyInput').value = '';
+				document.getElementById('repeatKeyInput').value = '';
+
+				$('#configClaveModal').modal('hide');
+
+				setTimeout(function () {
+					mostrarModalMensajeUf(
+						'Contraseña guardada',
+						'Contraseña maestra guardada correctamente.',
+						'success'
+					);
+				}, 300);
+			},
+			error: function () {
+				mostrarModalMensajeUf(
+					'Error de conexión',
+					'Error de conexión al guardar la contraseña.',
+					'error'
+				);
+			}
+		});
+	}
+
+	document.addEventListener('DOMContentLoaded', function () {
+
+		renderGrid();
+
+		consultarEstadoClaveUf(function (existeClave) {
+
+			if (!existeClave) {
+				$('#bienvenidaUfModal').modal({
+					backdrop: 'static',
+					keyboard: false
+				});
+			}
+
+		});
+
+		$('#authModal').on('hidden.bs.modal', function () {
+			limpiarModalAuthUf();
+		});
+
+	});
+	function recuperarClaveUf() {
+		const descripcion = document.getElementById('recuperarClaveUfDescripcion');
+		const correoText = document.getElementById('correoRecuperacionUfText');
+		const errorBox = document.getElementById('recuperarClaveUfError');
+		const errorText = document.getElementById('recuperarClaveUfErrorText');
+		const btn = document.getElementById('btnConfirmarRecuperarClaveUf');
+
+		const infoCorreoBox = correoText.closest('.alert-info');
+
+		errorBox.classList.add('hidden');
+		errorText.innerText = '';
+
+		if (descripcion) {
+			descripcion.classList.remove('hidden');
+		}
+
+		if (infoCorreoBox) {
+			infoCorreoBox.classList.remove('hidden');
+		}
+
+		if (!esPerfilAdminUf) {
+			if (descripcion) {
+				descripcion.classList.add('hidden');
+			}
+
+			if (infoCorreoBox) {
+				infoCorreoBox.classList.add('hidden');
+			}
+
+			errorText.innerText = 'Solo el perfil administrador puede recuperar la contraseña UF. Debe contactarse con el administrador del sistema.';
+			errorBox.classList.remove('hidden');
+			btn.disabled = true;
+		} else if (!correoUsuarioUf) {
+			if (descripcion) {
+				descripcion.classList.add('hidden');
+			}
+
+			if (infoCorreoBox) {
+				infoCorreoBox.classList.add('hidden');
+			}
+
+			errorText.innerText = 'No se encontró correo de usuario en sesión.';
+			errorBox.classList.remove('hidden');
+			btn.disabled = true;
+		} else {
+			correoText.innerText = correoUsuarioUf;
+			btn.disabled = false;
+		}
+
+		$('#authModal').modal('hide');
+
+		setTimeout(function () {
+			$('#recuperarClaveUfModal').modal('show');
+		}, 300);
+	}
+
+	function confirmarRecuperarClaveUf() {
+		const btn = document.getElementById('btnConfirmarRecuperarClaveUf');
+		const errorBox = document.getElementById('recuperarClaveUfError');
+		const errorText = document.getElementById('recuperarClaveUfErrorText');
+
+		errorBox.classList.add('hidden');
+		errorText.innerText = '';
+
+		btn.disabled = true;
+		btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+
+		$.ajax({
+			url: '/login/dashboard/recuperar_clave_uf',
+			type: 'POST',
+			dataType: 'json',
+			success: function (response) {
+				btn.disabled = false;
+				btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar contraseña temporal';
+
+				if (!response || response.success === false) {
+					errorText.innerText = response && response.message ? response.message : 'No se pudo recuperar la contraseña UF.';
+					errorBox.classList.remove('hidden');
+					return;
+				}
+
+				$('#recuperarClaveUfModal').modal('hide');
+				$('#authModal').modal('hide');
+
+				setTimeout(function () {
+					mostrarModalMensajeUf(
+						'Contraseña temporal enviada',
+						response.message || 'Se generó una nueva contraseña temporal y fue enviada al correo.',
+						'success'
+					);
+				}, 300);
+			},
+			error: function () {
+				btn.disabled = false;
+				btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar contraseña temporal';
+
+				errorText.innerText = 'Error de conexión al recuperar la contraseña UF.';
+				errorBox.classList.remove('hidden');
+			}
+		});
+	}
+
+	function abrirModalBienvenidaUf() {
+		$('#bienvenidaUfModal').modal({
+			backdrop: 'static',
+			keyboard: false
+		});
+	}
+
+
+function mostrarModalMensajeUf(titulo, mensaje, tipo, callback) {
+	const modal = $('#mensajeUfModal');
+	const title = document.getElementById('mensajeUfModalLabel');
+	const text = document.getElementById('mensajeUfTexto');
+
+	title.innerText = titulo || 'Mensaje';
+	text.innerText = mensaje || '';
+
+	modal.off('hidden.bs.modal');
+
+	if (typeof callback === 'function') {
+		modal.on('hidden.bs.modal', function () {
+			callback();
+		});
+	}
+
+	modal.modal({
+		backdrop: 'static',
+		keyboard: false
+	});
+}
+
+function limpiarModalAuthUf() {
+	const input = document.getElementById('keyInput');
+	const error = document.getElementById('errorMsg');
+	const group = document.getElementById('keyGroup');
+
+	if (input) {
+		input.value = '';
+	}
+
+	if (error) {
+		error.classList.add('hidden');
+		error.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Contraseña incorrecta.';
+	}
+
+	if (group) {
+		group.classList.remove('has-error');
+	}
+}
+
+
+
+</script>
+
+<style>
+	.bienvenida-uf-dialog {
+		width: 420px;
+		max-width: 92%;
+		margin-top: 70px;
+	}
+
+	.bienvenida-uf-content {
+		border-radius: 5px;
+		overflow: hidden;
+		border: none;
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+	}
+
+	.bienvenida-uf-header {
+		padding: 16px 20px;
+		border-bottom: 1px solid #e5e5e5;
+		background: #fff;
+	}
+
+	.bienvenida-uf-title {
+		font-size: 17px;
+		font-weight: 700;
+		color: #222;
+		line-height: 22px;
+		margin: 0;
+	}
+
+	.bienvenida-uf-body {
+		padding: 24px 22px 16px 22px;
+	}
+
+	.bienvenida-uf-item {
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: 16px;
+	}
+
+	.bienvenida-uf-numero {
+		width: 25px;
+		height: 25px;
+		min-width: 25px;
+		border-radius: 50%;
+		background: #f0ad4e;
+		color: #fff;
+		text-align: center;
+		line-height: 25px;
+		font-size: 13px;
+		font-weight: bold;
+		margin-right: 13px;
+	}
+
+	.bienvenida-uf-texto {
+		font-size: 14px;
+		line-height: 17px;
+		color: #222;
+		padding-top: 1px;
+	}
+
+	.bienvenida-uf-btn {
+		margin-top: 6px;
+		height: 41px;
+		font-size: 15px;
+		font-weight: 700;
+		background-color: #f0ad4e;
+		border-color: #eea236;
+	}
+
+	.bienvenida-uf-btn:hover,
+	.bienvenida-uf-btn:focus {
+		background-color: #ec971f;
+		border-color: #d58512;
+	}
+	
+.icono-info-uf {
+	margin-left: 6px;
+	font-size: 13px;
+	color: #5bc0de;
+	cursor: help;
+	vertical-align: middle;
+	position: relative;
+	top: -2px;
+}
+
+.icono-info-uf:hover {
+	color: #31b0d5;
+}
+
+.mensaje-uf-contenedor {
+	margin-bottom: 16px;
+}
+
+.mensaje-uf-btn {
+
+	min-width: 85px;
+	height: 28px;
+	padding: 3px 12px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 18px;
+	background-color: #f0ad4e;
+	border-color: #eea236;
+
+}
+
+.mensaje-uf-btn:hover,
+.mensaje-uf-btn:focus {
+	background-color: #ec971f;
+	border-color: #d58512;
+}
+
+.mensaje-uf-acciones {
+	text-align: center;
+}
+</style>				</div>
+			</div>
+						</div>
+	</div>
+	<div id="dialog" title="Basic dialog" style="display:none;">
+	</div>
+
+	
+</body>
+</html>
